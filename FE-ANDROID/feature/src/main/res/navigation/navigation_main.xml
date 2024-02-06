@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main.xml"
+    app:startDestination="@id/navigation_income">
+
+    <fragment
+        android:id="@+id/navigation_income"
+        android:name="com.teamfairy.feature.income.IncomeFragment"
+        android:label="IncomeFragment"
+        tools:layout="@layout/fragment_income" />
+    <fragment
+        android:id="@+id/navigation_consumption"
+        android:name="com.teamfairy.feature.consumption.ConsumptionFragment"
+        android:label="ConsumptionFragment"
+        tools:layout="@layout/fragment_consumption" />
+    <fragment
+        android:id="@+id/navigation_community"
+        android:name="com.teamfairy.feature.community.CommunityFragment"
+        android:label="CommunityFragment"
+        tools:layout="@layout/fragment_community" />
+    <fragment
+        android:id="@+id/navigation_my_page"
+        android:name="com.teamfairy.feature.mypage.MyPageFragment"
+        android:label="MyPageFragment"
+        tools:layout="@layout/fragment_my_page" />
+</navigation>
