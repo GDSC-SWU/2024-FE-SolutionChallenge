@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_income"
+        android:icon="@drawable/ic_navigation_income"
+        android:title="@string/label_navigation_income" />
+
+    <item
+        android:id="@+id/navigation_consumption"
+        android:icon="@drawable/ic_navigation_consumption"
+        android:title="@string/label_navigation_consumption" />
+
+    <item
+        android:id="@+id/navigation_community"
+        android:icon="@drawable/ic_navigation_community"
+        android:title="@string/label_navigation_community" />
+
+    <item
+        android:id="@+id/navigation_my_page"
+        android:icon="@drawable/ic_navigation_my_page"
+        android:title="@string/label_navigation_my_page" />
+</menu>

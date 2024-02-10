@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FE</string>
+    <string name="label_navigation_income">Income</string>
+    <string name="label_navigation_consumption">Consumption</string>
+    <string name="label_navigation_community">Community</string>
+    <string name="label_navigation_my_page">My page</string>
+</resources>
