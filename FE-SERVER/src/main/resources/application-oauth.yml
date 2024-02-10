@@ -1,0 +1,13 @@
+# 850417348860-i8i1nqn8v1opmrjn7k2dhiq3vbqmo6s2.apps.googleusercontent.com
+# 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
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 1014963573888-bubofd5685b71cse20j09264lmg6e1g4.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - profile
+              - email
