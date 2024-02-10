@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "f1ca6599-ff83-42ed-be47-918f7a9e6c4b",
+		"name": "Tbl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10333308"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MDQ3OTc0LCJleHAiOjE3MDcwNTE1NzR9.yLuxM9KT2yvHMcg2OygpMLroCT2eM1j0sgpH8d9o3aUpxHWCsFja_r9jAoiDKkdvzyRmQhGulPTQgFmd6v-jmw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "refresh",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accessToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MDQ1MTkyLCJleHAiOjE3MDcwNDg3OTJ9.kpzoVVIiX2dBA5ITDoPd5DqqukSEHtb-Gzr7M4-ENwoCuEMCJrc4PtuuydmyE0k1RSqGaeifxKBxX_tP492X_g\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/member/refresh",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"member",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MjExOTg5LCJleHAiOjE3MDcyMTU1ODl9.zKM2I-S9Acip-eLb4ko1yYGGSElxqcYgp9XGRE6CsPDA8BEACF9UmSi_9QFMjd8A0tuynnNVbS326ZXKlUo_xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "refresh",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{localUrl}}/logout",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "income",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MjIyODI3LCJleHAiOjE3MDcyMjY0Mjd9.8uK9AR1RVvUyzIpHSOulNcFIZVd3Xm0ExVAVsTqY98PFjfV4zx14OvgmlUbFGPPUi49CrwmNgXP12KuKqOzzSQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"officeName\": \"오피스\",\r\n    \"incomeDay\": \"20\",\r\n    \"salaryType\": \"HOURLY_WAGE\",\r\n    \"koreaSalary\": 1000000,\r\n    \"workHour\": 10,\r\n    \"fromWorkDay\": \"2024-02-01\",\r\n    \"toWorkDay\": \"2024-02-02\",\r\n    \"taxYn\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/tbl/income/create",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"tbl",
+								"income",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MjE4Nzg4LCJleHAiOjE3MDcyMjIzODh9.oc4_XaRTutQukksm4IvkgFSw7Y1T304GmeBg-wKYS_ikq73ujbPAeT2fI4LsL6rzMrE0BdGIYfe2RmMiaEY1bA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/tbl/income/detail?tblIncomeId=1&orderType=ASC",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"tbl",
+								"income",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "tblIncomeId",
+									"value": "1"
+								},
+								{
+									"key": "orderType",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MjIwNjkyLCJleHAiOjE3MDcyMjQyOTJ9.gsZn01erZwrsfkj7Tah8l7jvHdg6GV3gmudnBAiyrRjytA_CFV1r60JscTPxNtybqDQXPtrun6bhzlAeZ-cJJQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/tbl/income/list",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"tbl",
+								"income",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member",
+			"item": [
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MjIxMzcyLCJleHAiOjE3MDcyMjQ5NzJ9.2cLUMZ_S0yGsQbyd9W8yNYaB-PVcH7slpGi-OBW3daZpPBJRBuxfEZS5ZYGiPfq0JaUf6wG8yWE-bWBcP25N4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/member/detail/1",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"member",
+								"detail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA3MjIxMzcyLCJleHAiOjE3MDcyMjQ5NzJ9.2cLUMZ_S0yGsQbyd9W8yNYaB-PVcH7slpGi-OBW3daZpPBJRBuxfEZS5ZYGiPfq0JaUf6wG8yWE-bWBcP25N4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tblMemberId\": 1,\r\n    \"tblNationId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/member/update",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"member",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

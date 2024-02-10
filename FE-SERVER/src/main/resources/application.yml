@@ -1,0 +1,15 @@
+server:
+  port: 10000
+
+#  # oauth config import
+spring:
+  profiles:
+    include: oauth
+
+app:
+  auth:
+    token:
+      secret-key: "6B64DCA4E72F58EDIKU9AAB215FE76B64DCA4E72F58EDIKU9AAB215FE76B64DCA4E72F58EDIKU9AAB215FE7"
+      refresh-cookie-key: "refrash"
+  oauth2:
+    authorizedRedirectUri: "http://localhost:10000/auth/token"
