@@ -28,6 +28,12 @@
         <item name="lineHeight">21sp</item>
     </style>
 
+    <style name="TextAppearance.FE.Medium_12">
+        <item name="fontFamily">@font/font_notosans_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">18sp</item>
+    </style>
+
     <style name="TextAppearance.FE.Regular_14">
         <item name="fontFamily">@font/font_notosans_regular</item>
         <item name="android:textSize">14sp</item>
