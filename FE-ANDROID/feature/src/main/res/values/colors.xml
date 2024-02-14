@@ -8,5 +8,5 @@
     <color name="gray_f5">#F5F5F5</color>
     <color name="gray_cd">#CDCDCD</color>
     <color name="gray_85">#858585</color>
-    <color name="gray_1">#FFF6F6F7</color>
+    <color name="bg_white">#FEFEFE</color>
 </resources>
