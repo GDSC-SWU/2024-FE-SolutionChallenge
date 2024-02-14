@@ -1,13 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="workCheck"
+            type="com.teamfairy.domain.entity.WorkCheckEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/tv_income_detail_work_check_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_income_detail_work_check_title"
+            android:textAppearance="@style/TextAppearance.FE.Medium_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_income_detail_work_check_year"
+            formatDateyyyyMM="@{workCheck.workDay}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray_e1"
+            android:includeFontPadding="false"
+            android:paddingVertical="12dp"
+            android:paddingStart="24dp"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_title"
+            tools:text="2024.01" />
+
+        <TextView
+            android:id="@+id/tv_income_detail_work_check_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:drawablePadding="6dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_income_detail_work_check_filter"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            app:drawableStartCompat="@drawable/ic_income_detail_filter"
+            app:layout_constraintBottom_toBottomOf="@id/tv_income_detail_work_check_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_income_detail_work_check_year" />
+
+        <TextView
+            android:id="@+id/tv_income_detail_work_check_date"
+            formatDateMMMd="@{workCheck.workDay}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:includeFontPadding="false"
+            android:textAppearance="@style/TextAppearance.FE.Regular_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_year"
+            tools:text="Jan 25" />
+
+        <TextView
+            android:id="@+id/tv_income_detail_work_check_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:text="@{workCheck.workHour + ` hours`}"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_date"
+            app:layout_goneMarginStart="24dp"
+            tools:text="1 hours" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@{workCheck.daySalary + ` ₩`}"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            app:layout_constraintBottom_toTopOf="@id/divider_item_income_detail_work_check"
+            app:layout_constraintEnd_toStartOf="@id/iv_income_detail_work_check"
+            app:layout_constraintStart_toEndOf="@id/tv_income_detail_work_check_date"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_year"
+            tools:text="9,860 ₩" />
+
+        <ImageView
+            android:id="@+id/iv_income_detail_work_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:src="@drawable/sel_income_detail_check"
+            app:layout_constraintBottom_toTopOf="@id/divider_item_income_detail_work_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_year" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_item_income_detail_work_check"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            app:dividerColor="@color/gray_f5"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_time" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
