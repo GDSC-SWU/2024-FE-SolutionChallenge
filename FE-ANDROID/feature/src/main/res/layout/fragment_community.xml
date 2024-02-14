@@ -6,18 +6,99 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/week_app_bar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="community"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <TextView
+                    android:id="@+id/tv_community_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="COMMUNITY"
+                    android:textAppearance="@style/TextAppearance.FE.Bold_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_posting"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_community_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_community_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentInsetStart="0dp"
+                android:minHeight="0dp">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tablayout_community"
+                    style="@style/Widget.Material3.TabLayout.Secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabIndicatorColor="@color/main_color"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabRippleColor="@null"
+                    app:tabSelectedTextAppearance="@style/TextAppearance.FE.Bold_14"
+                    app:tabSelectedTextColor="@color/main_color"
+                    app:tabTextAppearance="@style/TextAppearance.FE.Regular_14"
+                    app:tabTextColor="@color/gray_85">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_calender_weekly_mon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="daily" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_calender_weekly_tue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="share delivery" />
+                </com.google.android.material.tabs.TabLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_community"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
