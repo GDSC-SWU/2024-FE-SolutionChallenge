@@ -1,5 +1,5 @@
 package com.teamfairy.domain.entity
 
-data class CommunityEntity(
+data class FeedEntity(
     val title: String
 )

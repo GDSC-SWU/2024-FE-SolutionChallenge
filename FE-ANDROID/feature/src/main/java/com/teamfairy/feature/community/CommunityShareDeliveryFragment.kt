@@ -1,7 +1,7 @@
 package com.teamfairy.feature.community
 
 import com.teamfairy.core_ui.base.BindingFragment
-import com.teamfairy.domain.entity.CommunityEntity
+import com.teamfairy.domain.entity.FeedEntity
 import com.teamfairy.feature.R
 import com.teamfairy.feature.databinding.FragmentCommunityShareDeliveryBinding
 
@@ -12,11 +12,11 @@ class CommunityShareDeliveryFragment : BindingFragment<FragmentCommunityShareDel
 
     private fun initCommunityTabAdapter() {
         val list = listOf(
-            CommunityEntity("Test1"),
-            CommunityEntity("Test2"),
-            CommunityEntity("Test3"),
-            CommunityEntity("Test4"),
-            CommunityEntity("Test5")
+            FeedEntity("Test1"),
+            FeedEntity("Test2"),
+            FeedEntity("Test3"),
+            FeedEntity("Test4"),
+            FeedEntity("Test5")
         )
 
         binding.rvCommunityShareDelivery.adapter = CommunityTabAdapter(onMoveToCommunityDetailClick = {

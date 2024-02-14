@@ -4,20 +4,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.teamfairy.core_ui.view.ItemDiffCallback
-import com.teamfairy.domain.entity.CommunityEntity
+import com.teamfairy.domain.entity.FeedEntity
 import com.teamfairy.feature.community.viewholder.CommunityTabViewHolder
-import com.teamfairy.feature.databinding.ItemCommunityBinding
+import com.teamfairy.feature.databinding.ItemCommunityFeedBinding
 
 class CommunityTabAdapter(
-    private val onMoveToCommunityDetailClick: (CommunityEntity) -> Unit
-) :
-    ListAdapter<CommunityEntity, CommunityTabViewHolder>(
-        CommunityTabDiffCallback
-    ) {
+    private val onMoveToCommunityDetailClick: (FeedEntity) -> Unit
+) : ListAdapter<FeedEntity, CommunityTabViewHolder>(
+    CommunityTabDiffCallback
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommunityTabViewHolder {
         val binding =
-            ItemCommunityBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemCommunityFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CommunityTabViewHolder(binding, onMoveToCommunityDetailClick)
     }
 
@@ -27,7 +26,7 @@ class CommunityTabAdapter(
 
     companion object {
         private val CommunityTabDiffCallback =
-            ItemDiffCallback<CommunityEntity>(onItemsTheSame = { old, new -> old.title == new.title },
+            ItemDiffCallback<FeedEntity>(onItemsTheSame = { old, new -> old.title == new.title },
                 onContentsTheSame = { old, new -> old == new })
     }
 }
