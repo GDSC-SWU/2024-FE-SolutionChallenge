@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="income"
+            type="com.teamfairy.domain.entity.IncomeCardEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_fill_main_20_rec">
+
+        <TextView
+            android:id="@+id/tv_item_income_card_company_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="18dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@{income.companyName}"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
+            app:layout_constraintEnd_toStartOf="@id/switch_item_income_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/dummy" />
+
+        <TextView
+            android:id="@+id/tv_item_income_card_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:text="@{income.startDay}"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_income_card_company_name"
+            tools:text="2024.01.01 - 01.31" />
+
+        <Switch
+            android:id="@+id/switch_item_income_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:thumb="@drawable/ic_income_switch_thumb"
+            android:track="@drawable/sel_income_switch_track"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_fill_main_20_rec"
+            android:backgroundTint="@color/white_60"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="54dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@{income.currentSalary}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_income_card_time"
+            tools:text="1,000" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
