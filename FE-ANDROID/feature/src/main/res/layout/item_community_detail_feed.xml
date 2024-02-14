@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_community_detail_feed_start_28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="28dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_community_detail_feed_end_28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="28dp" />
+
+        <ImageView
+            android:id="@+id/iv_item_community_detail_feed_profile"
+            android:layout_width="35dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="33dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="@id/guideline_item_community_detail_feed_start_28"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/tv_item_community_detail_feed_nickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.FE.Regular_14"
+            app:layout_constraintBottom_toTopOf="@id/tv_item_community_detail_feed_time"
+            app:layout_constraintEnd_toStartOf="@id/guideline_item_community_detail_feed_end_28"
+            app:layout_constraintStart_toEndOf="@id/iv_item_community_detail_feed_profile"
+            app:layout_constraintTop_toTopOf="@id/iv_item_community_detail_feed_profile"
+            tools:text="nickname" />
+
+        <TextView
+            android:id="@+id/tv_item_community_detail_feed_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            android:textColor="@color/gray_85"
+            app:layout_constraintBottom_toBottomOf="@id/iv_item_community_detail_feed_profile"
+            app:layout_constraintStart_toStartOf="@id/tv_item_community_detail_feed_nickname"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_community_detail_feed_nickname"
+            tools:text="2H ago" />
+
+        <TextView
+            android:id="@+id/tv_item_community_detail_feed_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textAppearance="@style/TextAppearance.FE.Medium_14"
+            app:layout_constraintEnd_toStartOf="@id/guideline_item_community_detail_feed_end_28"
+            app:layout_constraintStart_toEndOf="@id/guideline_item_community_detail_feed_start_28"
+            app:layout_constraintTop_toBottomOf="@id/iv_item_community_detail_feed_profile"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/tv_item_community_detail_feed_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            app:layout_constraintEnd_toStartOf="@id/guideline_item_community_detail_feed_end_28"
+            app:layout_constraintStart_toEndOf="@id/guideline_item_community_detail_feed_start_28"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_community_detail_feed_title"
+            tools:text="@string/dummy" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_item_community_detail"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginTop="22dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_community_detail_feed_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/tv_item_community_detail_feed_comment_title"
+            android:textAppearance="@style/TextAppearance.FE.Medium_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_item_community_detail_feed_start_28"
+            app:layout_constraintTop_toBottomOf="@id/divider_item_community_detail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
