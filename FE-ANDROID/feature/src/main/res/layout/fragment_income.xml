@@ -11,30 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <include
             android:id="@+id/appbar_income"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="44dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/tv_income_appbar_title"
-                    android:textAppearance="@style/TextAppearance.FE.Bold_14" />
-            </androidx.appcompat.widget.Toolbar>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                app:dividerColor="@color/gray_f5" />
-        </com.google.android.material.appbar.AppBarLayout>
+            layout="@layout/view_appbar"
+            app:back="@{false}"
+            app:title="@{@string/tv_income_appbar_title}" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
