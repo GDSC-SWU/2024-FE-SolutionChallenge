@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_community_posting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetStart="0dp">
+
+                <ImageView
+                    android:id="@+id/iv_community_posting_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_community_posting_cancel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="POSTING"
+                    android:textAppearance="@style/TextAppearance.FE.Bold_14" />
+
+                <ImageView
+                    android:id="@+id/iv_community_posting_complete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_community_posting_complete" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:dividerColor="@color/gray_f5" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <View
+            android:id="@+id/view_community_posting_category_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/gray_f5"
+            app:layout_constraintBottom_toTopOf="@id/divider_community_posting"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar_community_posting" />
+
+        <TextView
+            android:id="@+id/tv_community_posting_description_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:includeFontPadding="false"
+            android:text="Please select the category of the post."
+            android:textAppearance="@style/TextAppearance.FE.Medium_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar_community_posting" />
+
+        <TextView
+            android:id="@+id/tv_community_posting_label_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="Category"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_community_posting_description_category" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_community_posting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:singleSelection="true"
+            app:layout_constraintBottom_toBottomOf="@id/tv_community_posting_label_category"
+            app:layout_constraintStart_toEndOf="@id/tv_community_posting_label_category"
+            app:layout_constraintTop_toTopOf="@id/tv_community_posting_label_category">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="daily"
+                android:textColor="@color/sel_community_posting_category_text"
+                app:chipBackgroundColor="@color/sel_community_posting_category_bg"
+                app:chipCornerRadius="8dp"
+                app:chipStrokeColor="@color/sel_community_posting_category_line" />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="share delivery"
+                android:textColor="@color/sel_community_posting_category_text"
+                app:chipBackgroundColor="@color/sel_community_posting_category_bg"
+                app:chipCornerRadius="8dp"
+                app:chipStrokeColor="@color/sel_community_posting_category_line" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_community_posting"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintTop_toBottomOf="@id/tv_community_posting_label_category" />
+
+        <EditText
+            android:id="@+id/et_community_posting_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="18dp"
+            android:background="@null"
+            android:hint="Please enter a title."
+            android:includeFontPadding="false"
+            android:maxLength="20"
+            android:textAppearance="@style/TextAppearance.FE.Regular_14"
+            android:textColorHint="@color/gray_cd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_community_posting" />
+
+        <TextView
+            android:id="@+id/tv_community_posting_title_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:text="0/20"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            android:textColor="@color/gray_cd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_community_posting_title" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_community_posting_title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintTop_toBottomOf="@id/tv_community_posting_title_length" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="2dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="Please enter the content."
+            android:includeFontPadding="false"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            android:textColorHint="@color/gray_cd"
+            app:layout_constraintBottom_toTopOf="@id/tv_community_posting_content_length"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_community_posting_title" />
+
+        <TextView
+            android:id="@+id/tv_community_posting_content_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="0/500"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            android:textColor="@color/gray_cd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
