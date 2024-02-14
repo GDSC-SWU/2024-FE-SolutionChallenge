@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="income"
+            type="com.teamfairy.domain.entity.IncomeCardEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_fill_main_20_rec"
+        android:backgroundTint="@color/point_color">
+
+        <TextView
+            android:id="@+id/tv_item_income_card_finish_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_item_income_card_finish_title"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_income_card_finish_salary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="14dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@{income.currentSalary}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_income_card_finish_title"
+            tools:text="@string/dummy" />
+
+        <TextView
+            android:id="@+id/tv_item_income_card_finish_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_item_income_card_finish_description"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_income_card_finish_salary" />
+
+        <TextView
+            android:id="@+id/tv_item_income_card_finish_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/shape_fill_white_5_rec"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="16dp"
+            android:text="@string/tv_item_income_card_finish_no"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_item_income_card_finish"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_income_card_finish_description" />
+
+        <TextView
+            android:id="@+id/tv_item_income_card_finish_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/shape_fill_white_5_rec"
+            android:backgroundTint="@color/sub_color"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="16dp"
+            android:text="@string/tv_item_income_card_finish_yes"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_item_income_card_finish"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_income_card_finish_description" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_income_card_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:paddingVertical="2dp"
+            app:dividerColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_item_income_card_finish_no"
+            app:layout_constraintEnd_toEndOf="@id/guideline_item_income_card_finish"
+            app:layout_constraintStart_toStartOf="@id/guideline_item_income_card_finish"
+            app:layout_constraintTop_toTopOf="@id/tv_item_income_card_finish_no" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
