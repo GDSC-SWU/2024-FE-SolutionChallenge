@@ -1,10 +1,24 @@
 <resources>
     <string name="app_name">FE</string>
+    <!--navigation-->
     <string name="label_navigation_income">Income</string>
     <string name="label_navigation_consumption">Consumption</string>
     <string name="label_navigation_community">Community</string>
     <string name="label_navigation_my_page">My page</string>
-    <string name="dummy">testtestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttest</string>
+
+    <!--community-->
     <string name="tv_item_community_detail_feed_comment_title">Comments</string>
     <string name="et_community_detail_input_comment_hint">Please enter the comments.</string>
+    <string name="appbar_community_posting_title">POSTING</string>
+    <string name="tv_community_posting_description_category">Please select the category of the post.</string>
+    <string name="tv_community_posting_label_category">Category</string>
+    <string name="tv_community_posting_category_share_delivery">share delivery</string>
+    <string name="tv_community_posting_category_daily">daily</string>
+    <string name="et_community_posting_title">Please enter a title.</string>
+    <string name="tv_community_posting_title_length">0/20</string>
+    <string name="et_community_posting_content">Please enter the content.</string>
+    <string name="tv_community_posting_content_length">0/500</string>
+
+    <!--test-->
+    <string name="dummy">testtestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttest</string>
 </resources>
