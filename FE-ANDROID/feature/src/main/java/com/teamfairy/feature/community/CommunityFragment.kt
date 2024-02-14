@@ -6,7 +6,6 @@ import com.teamfairy.feature.R
 import com.teamfairy.feature.databinding.FragmentCommunityBinding
 
 class CommunityFragment : BindingFragment<FragmentCommunityBinding>(R.layout.fragment_community) {
-
     override fun initView() {
         initCommunityTabAdapter()
     }
@@ -14,7 +13,10 @@ class CommunityFragment : BindingFragment<FragmentCommunityBinding>(R.layout.fra
     private fun initCommunityTabAdapter(){
         binding.vpCommunity.adapter = CommunityViewpagerAdapter(this)
         TabLayoutMediator(binding.tablayoutCommunity, binding.vpCommunity){tab,position ->
-
+            when(position){
+                0 -> tab.text = "daily"
+                else -> tab.text = "share delivery"
+            }
         }.attach()
     }
 }

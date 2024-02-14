@@ -25,7 +25,7 @@ class CommunityTabAdapter(
     }
 
     companion object {
-        private val CommunityTabDiffCallback =
+        val CommunityTabDiffCallback =
             ItemDiffCallback<FeedEntity>(onItemsTheSame = { old, new -> old.title == new.title },
                 onContentsTheSame = { old, new -> old == new })
     }
