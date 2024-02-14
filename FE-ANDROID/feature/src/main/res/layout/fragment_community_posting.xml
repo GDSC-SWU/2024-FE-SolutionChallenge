@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:includeFontPadding="false"
-                    android:text="POSTING"
+                    android:text="@string/appbar_community_posting_title"
                     android:textAppearance="@style/TextAppearance.FE.Bold_14" />
 
                 <ImageView
@@ -70,7 +70,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="22dp"
             android:includeFontPadding="false"
-            android:text="Please select the category of the post."
+            android:text="@string/tv_community_posting_description_category"
             android:textAppearance="@style/TextAppearance.FE.Medium_14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appbar_community_posting" />
@@ -82,7 +82,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:includeFontPadding="false"
-            android:text="Category"
+            android:text="@string/tv_community_posting_label_category"
             android:textAppearance="@style/TextAppearance.FE.Medium_12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_community_posting_description_category" />
@@ -100,7 +100,7 @@
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="daily"
+                android:text="@string/tv_community_posting_category_daily"
                 android:textColor="@color/sel_community_posting_category_text"
                 app:chipBackgroundColor="@color/sel_community_posting_category_bg"
                 app:chipCornerRadius="8dp"
@@ -109,7 +109,7 @@
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="share delivery"
+                android:text="@string/tv_community_posting_category_share_delivery"
                 android:textColor="@color/sel_community_posting_category_text"
                 app:chipBackgroundColor="@color/sel_community_posting_category_bg"
                 app:chipCornerRadius="8dp"
@@ -131,14 +131,16 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="18dp"
             android:background="@null"
-            android:hint="Please enter a title."
+            android:hint="@string/et_community_posting_title"
             android:includeFontPadding="false"
             android:maxLength="20"
             android:textAppearance="@style/TextAppearance.FE.Regular_14"
             android:textColorHint="@color/gray_cd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_community_posting" />
+            app:layout_constraintTop_toBottomOf="@id/divider_community_posting">
+            <requestFocus/>
+        </EditText>
 
         <TextView
             android:id="@+id/tv_community_posting_title_length"
@@ -146,7 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="8dp"
-            android:text="0/20"
+            android:text="@string/tv_community_posting_title_length"
             android:textAppearance="@style/TextAppearance.FE.Regular_10"
             android:textColor="@color/gray_cd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +163,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_community_posting_title_length" />
 
         <EditText
+            android:id="@+id/et_community_posting_content"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
@@ -168,7 +171,7 @@
             android:layout_marginBottom="2dp"
             android:background="@null"
             android:gravity="top"
-            android:hint="Please enter the content."
+            android:hint="@string/et_community_posting_content"
             android:includeFontPadding="false"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
             android:textColorHint="@color/gray_cd"
@@ -183,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="10dp"
-            android:text="0/500"
+            android:text="@string/tv_community_posting_content_length"
             android:textAppearance="@style/TextAppearance.FE.Regular_10"
             android:textColor="@color/gray_cd"
             app:layout_constraintBottom_toBottomOf="parent"
