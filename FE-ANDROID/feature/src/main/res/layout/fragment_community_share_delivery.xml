@@ -21,5 +21,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_community_feed" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_community_share_delivery_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/et_community_share_delivery_detail_input_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_community_comment" />
+
+        <EditText
+            android:id="@+id/et_community_share_delivery_detail_input_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/shape_fill_grayf5_7_rec"
+            android:drawableEnd="@drawable/ic_comment_posting"
+            android:hint="@string/et_community_detail_input_comment_hint"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            android:textColorHint="@color/gray_85"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_community_share_delivery_detail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

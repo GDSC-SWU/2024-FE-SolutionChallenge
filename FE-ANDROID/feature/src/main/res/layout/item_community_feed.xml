@@ -10,12 +10,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp">
+        android:background="@color/bg_white">
 
         <TextView
             android:id="@+id/tv_item_community_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:includeFontPadding="false"
             android:textAppearance="@style/TextAppearance.FE.Medium_12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,9 +27,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="5dp"
-            android:maxLines="2"
             android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
             app:layout_constraintEnd_toStartOf="@id/iv_item_community_img"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +43,18 @@
             android:layout_width="0dp"
             android:layout_height="71dp"
             android:layout_marginVertical="17dp"
+            android:layout_marginEnd="16dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:dividerColor="@color/gray_f5"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
