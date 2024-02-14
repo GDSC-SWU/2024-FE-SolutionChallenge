@@ -21,4 +21,9 @@
 
     <!--test-->
     <string name="dummy">testtestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttest</string>
+    <string name="tv_item_income_card_finish_title">Payday</string>
+    <string name="tv_item_income_card_finish_description">Have you all received it?</string>
+    <string name="tv_item_income_card_finish_no">NO</string>
+    <string name="tv_item_income_card_finish_yes">YES</string>
+    <string name="tv_income_appbar_title">INCOME</string>
 </resources>
