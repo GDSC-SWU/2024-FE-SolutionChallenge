@@ -5,4 +5,6 @@
     <string name="label_navigation_community">Community</string>
     <string name="label_navigation_my_page">My page</string>
     <string name="dummy">testtestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttesttesttestesttestesttestesttestesttestesttest</string>
+    <string name="tv_item_community_detail_feed_comment_title">Comments</string>
+    <string name="et_community_detail_input_comment_hint">Please enter the comments.</string>
 </resources>
