@@ -8,7 +8,9 @@ import com.teamfairy.domain.entity.WorkCheckEntity
 import com.teamfairy.feature.databinding.ItemIncomeDetailWorkCheckBinding
 import com.teamfairy.feature.incomedetail.viewholder.IncomeWorkCheckViewHolder
 
-class IncomeWorkCheckAdapter() : ListAdapter<WorkCheckEntity, IncomeWorkCheckViewHolder>(
+class IncomeWorkCheckAdapter(
+    private val onClickSortingBtn: (Boolean) -> Unit,
+) : ListAdapter<WorkCheckEntity, IncomeWorkCheckViewHolder>(
     IncomeWorkCheckDiffCallback
 ) {
     override fun onCreateViewHolder(
@@ -17,7 +19,11 @@ class IncomeWorkCheckAdapter() : ListAdapter<WorkCheckEntity, IncomeWorkCheckVie
         val binding = ItemIncomeDetailWorkCheckBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return IncomeWorkCheckViewHolder(binding)
+        return IncomeWorkCheckViewHolder(binding, onClickSortingBtn)
+    }
+
+    fun updateItem(data:List<WorkCheckEntity>){
+        submitList(data)
     }
 
     override fun onBindViewHolder(holder: IncomeWorkCheckViewHolder, position: Int) {
