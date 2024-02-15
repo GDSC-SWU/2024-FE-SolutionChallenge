@@ -23,6 +23,7 @@
             android:includeFontPadding="false"
             android:text="@string/tv_income_detail_work_check_title"
             android:textAppearance="@style/TextAppearance.FE.Medium_14"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,20 +38,22 @@
             android:paddingVertical="12dp"
             android:paddingStart="24dp"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_title"
             tools:text="2024.01" />
 
         <TextView
-            android:id="@+id/tv_income_detail_work_check_filter"
+            android:id="@+id/tv_income_detail_work_check_sorting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="28dp"
             android:drawablePadding="6dp"
             android:includeFontPadding="false"
-            android:text="@string/tv_income_detail_work_check_filter"
+            android:text="@string/tv_income_detail_work_check_filter_latest"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            android:visibility="gone"
             app:drawableStartCompat="@drawable/ic_income_detail_filter"
             app:layout_constraintBottom_toBottomOf="@id/tv_income_detail_work_check_year"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +93,8 @@
             android:text="@{workCheck.daySalary + ` ₩`}"
             android:textAppearance="@style/TextAppearance.FE.Bold_16"
             app:layout_constraintBottom_toTopOf="@id/divider_item_income_detail_work_check"
-            app:layout_constraintEnd_toStartOf="@id/iv_income_detail_work_check"
-            app:layout_constraintStart_toEndOf="@id/tv_income_detail_work_check_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_income_detail_work_check_year"
             tools:text="9,860 ₩" />
 

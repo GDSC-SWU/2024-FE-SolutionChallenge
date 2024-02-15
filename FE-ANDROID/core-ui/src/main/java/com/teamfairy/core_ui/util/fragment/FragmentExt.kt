@@ -1,5 +1,6 @@
 package com.teamfairy.core_ui.util.fragment
 
+import android.os.Build
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.ColorRes
@@ -34,3 +35,10 @@ val Fragment.viewLifeCycle
 
 val Fragment.viewLifeCycleScope
     get() = viewLifecycleOwner.lifecycleScope
+
+fun <T> Fragment.getParcelable(key: String, clazz: Class<T>): T? =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        requireArguments().getParcelable(key, clazz)
+    } else {
+        requireArguments().getParcelable(key)
+    }

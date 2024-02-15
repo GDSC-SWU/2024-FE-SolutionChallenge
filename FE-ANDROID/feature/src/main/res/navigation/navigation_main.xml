@@ -9,7 +9,11 @@
         android:id="@+id/navigation_income"
         android:name="com.teamfairy.feature.income.IncomeFragment"
         android:label="IncomeFragment"
-        tools:layout="@layout/fragment_income" />
+        tools:layout="@layout/fragment_income" >
+        <action
+            android:id="@+id/action_income_to_incomeDetail"
+            app:destination="@id/incomeDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_consumption"
         android:name="com.teamfairy.feature.consumption.ConsumptionFragment"
@@ -33,4 +37,8 @@
         android:id="@+id/communityPosting"
         android:name="com.teamfairy.feature.community.CommunityPosting"
         android:label="CommunityPosting" />
+    <fragment
+        android:id="@+id/incomeDetailFragment"
+        android:name="com.teamfairy.feature.incomedetail.IncomeDetailFragment"
+        android:label="IncomeDetailFragment" />
 </navigation>
