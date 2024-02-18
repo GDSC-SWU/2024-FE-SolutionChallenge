@@ -1,0 +1,21 @@
+{
+  "officeName": "오피스",
+  "incomeDay": "20",
+  "salaryType": "HOURLY_WAGE",
+  "fromWorkDay": "2024-02-01",
+  "toWorkDay": "2024-02-03",
+  "tblWorks": [
+    {
+      "koreaSalary": 10,
+      "workHour": 10,
+      "workDay": "2024-02-01"
+    },
+    {
+      "koreaSalary": 10,
+      "workHour": 10,
+      "workDay": "2024-02-03"
+    }
+  ],
+  "taxYn": false
+}
+

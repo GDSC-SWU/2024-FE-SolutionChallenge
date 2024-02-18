@@ -1,0 +1,40 @@
+spring:
+  config:
+    activate:
+      # 프로필 이름 local
+      on-profile: local
+  # security 기본 계정
+  security:
+    user:
+      name: test
+      password: 392c7d84-9210-4a3b-9d81-b516abcb4b47
+  datasource:
+    # h2 관련 설정
+    driver-class-name: org.h2.Driver
+    hikari:
+      jdbc-url: jdbc:h2:mem:test
+      username: sa
+      password:
+  # h2 console 경로 설정
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  # 구동시 h2 스키마 초기화
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    # query 문 보기
+    show-sql: true
+    # 하버네이트 sql 포맷팅
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    com.example.tbl: debug
+
+custom:
+  file-path: "/data/tbl/local"
