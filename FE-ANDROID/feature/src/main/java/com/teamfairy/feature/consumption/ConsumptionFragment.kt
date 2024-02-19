@@ -9,6 +9,8 @@ class ConsumptionFragment :
     BindingFragment<FragmentConsumptionBinding>(R.layout.fragment_consumption) {
     override fun initView() {
         binding.layoutConsumptionTaxi.tvConsumptionPriceTypeChildren.isVisible = false
+        binding.layoutConsumptionTaxi.tvConsumptionPriceChildrenKorea.isVisible = false
+        binding.layoutConsumptionTaxi.tvConsumptionPriceChildrenMyCountry.isVisible = false
         binding.layoutConsumptionTaxi.tvConsumptionPriceTypeTeenager.text = "Night"
     }
 }
