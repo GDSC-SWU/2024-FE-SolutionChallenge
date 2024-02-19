@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_nationality_profile"
+            android:layout_width="92dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="84dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_nationality_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:includeFontPadding="false"
+            android:text="user@gmail.com"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            android:textColor="@color/gray_85"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_nationality_profile" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_nationality"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:dividerColor="@color/gray_e1"
+            app:layout_constraintTop_toBottomOf="@id/tv_nationality_nickname" />
+
+        <TextView
+            android:id="@+id/tv_nationality_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_nationality_title"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_nationality" />
+
+        <TextView
+            android:id="@+id/tv_nationality_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_nationality_description"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            android:textColor="@color/gray_85"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nationality_title" />
+
+        <ImageView
+            android:id="@+id/iv_nationality_check_china"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/sel_checkbox_nationlity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nationality_description" />
+
+        <TextView
+            android:id="@+id/tv_nationality_china"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_nationality_china"
+            android:textAppearance="@style/TextAppearance.FE.Regular_14"
+            app:layout_constraintBottom_toBottomOf="@id/iv_nationality_check_china"
+            app:layout_constraintStart_toEndOf="@id/iv_nationality_check_china"
+            app:layout_constraintTop_toTopOf="@id/iv_nationality_check_china" />
+
+        <ImageView
+            android:id="@+id/iv_nationality_check_vietnam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/sel_checkbox_nationlity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_nationality_check_china" />
+
+        <TextView
+            android:id="@+id/tv_nationality_vietnam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_nationality_vietnam"
+            android:textAppearance="@style/TextAppearance.FE.Regular_14"
+            app:layout_constraintBottom_toBottomOf="@id/iv_nationality_check_vietnam"
+            app:layout_constraintStart_toEndOf="@id/iv_nationality_check_vietnam"
+            app:layout_constraintTop_toTopOf="@id/iv_nationality_check_vietnam" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_nationality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/shape_fill_main_20_rec"
+            android:backgroundTint="@color/sel_navigation_icon_color"
+            android:includeFontPadding="false"
+            android:paddingVertical="15dp"
+            android:text="@string/btn_nationality"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            android:textColor="@color/sel_completion_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

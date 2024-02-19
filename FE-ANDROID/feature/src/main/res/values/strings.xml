@@ -36,4 +36,9 @@
     <string name="tv_sign_in_title">FairE</string>
     <string name="tv_sign_in_description">Fair Economy for you</string>
     <string name="btn_sign_in_navigate_main">Continue with google</string>
+    <string name="tv_nationality_title">Nationality setting</string>
+    <string name="tv_nationality_description">Befor joining FE, please choose your nationality!</string>
+    <string name="tv_nationality_china">China</string>
+    <string name="tv_nationality_vietnam">Vietnam</string>
+    <string name="btn_nationality">Completion</string>
 </resources>

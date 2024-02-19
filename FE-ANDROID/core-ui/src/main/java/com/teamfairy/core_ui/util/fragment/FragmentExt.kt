@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
+import com.teamfairy.core_ui.util.context.statusBarColorOf
 
 fun Fragment.toast(message: String) {
     Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
@@ -42,3 +43,9 @@ fun <T> Fragment.getParcelable(key: String, clazz: Class<T>): T? =
     } else {
         requireArguments().getParcelable(key)
     }
+
+fun Fragment.statusBarColorOf(
+    @ColorRes resId: Int,
+) {
+    requireActivity().statusBarColorOf(resId)
+}
