@@ -10,15 +10,117 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/appbar_consumption"
+            layout="@layout/view_appbar"
+            app:back="@{false}"
+            app:title="@{@string/label_navigation_consumption}" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_consumption_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="consumption"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="18dp"
+            android:includeFontPadding="false"
+            android:text="Comparison of public transportation prices"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/appbar_consumption" />
 
+        <TextView
+            android:id="@+id/tv_consumption_label_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_fill_main_20_rec"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="25dp"
+            android:text="Bus"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_title" />
+
+        <include
+            android:id="@+id/layout_consumption_bus"
+            layout="@layout/view_consumption_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_bus" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_consumption_bus"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintTop_toBottomOf="@id/layout_consumption_bus" />
+
+        <TextView
+            android:id="@+id/tv_consumption_label_subway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_fill_main_20_rec"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="25dp"
+            android:text="Subway"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_consumption_bus" />
+
+        <include
+            android:id="@+id/layout_consumption_subway"
+            layout="@layout/view_consumption_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_subway" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_consumption_subway"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintTop_toBottomOf="@id/layout_consumption_subway" />
+
+        <TextView
+            android:id="@+id/tv_consumption_label_taxi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_fill_main_20_rec"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="25dp"
+            android:text="Subway"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_consumption_subway" />
+
+        <include
+            android:id="@+id/layout_consumption_taxi"
+            layout="@layout/view_consumption_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_taxi" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_consumption_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_consumption_price_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_consumption_price_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_consumption_price_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_consumption_price_3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_consumption_price_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_consumption_price_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_consumption_price_4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_consumption_price_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:dividerColor="@color/gray_cd"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_consumption_price_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_consumption_price_5" />
+
+
+        <TextView
+            android:id="@+id/tv_consumption_price_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="Type"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="Korea"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="3,000 ₩"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price"
+            app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="1,7000 ₩"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price"
+            app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="1,500 ₩"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price"
+            app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="My country"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
+            app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_3"
+            app:setExchangeCountry="1"
+            app:setExchangePrice="3000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
+            app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_4"
+            app:setExchangeCountry="1"
+            app:setExchangePrice="1700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
+            app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_5"
+            app:setExchangeCountry="1"
+            app:setExchangePrice="1500" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="General"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_consumption_price_3" />
+
+        <TextView
+            android:id="@+id/tv_consumption_price_type_teenager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="Teenager"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_consumption_price_4" />
+
+        <TextView
+            android:id="@+id/tv_consumption_price_type_children"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
+            android:text="Children"
+            android:textAppearance="@style/TextAppearance.FE.Regular_10"
+            app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_consumption_price_5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

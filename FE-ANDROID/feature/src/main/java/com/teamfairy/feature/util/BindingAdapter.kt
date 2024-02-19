@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.teamfairy.feature.R
+import java.text.DecimalFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Locale
@@ -36,4 +37,12 @@ fun TextView.formatDateyyyyMM(date: String) {
     text = LocalDate.parse(date).format(formatter)
 }
 
+@BindingAdapter("app:setExchangePrice", "app:setExchangeCountry", requireAll = true)
+fun TextView.exchange(price: String, country: String) {
+    val myFormatter = DecimalFormat("#,###")
 
+    when (country) {
+        "0" -> text = myFormatter.format(price.toInt() * 0.0054).toString() + "¥"
+        "1" -> text = myFormatter.format(price.toInt() * 18.38).toString() + "₫"
+    }
+}
