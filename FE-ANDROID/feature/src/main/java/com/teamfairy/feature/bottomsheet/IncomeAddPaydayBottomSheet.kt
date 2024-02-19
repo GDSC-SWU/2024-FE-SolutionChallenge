@@ -42,8 +42,15 @@ class IncomeAddPaydayBottomSheet :
 
     private fun setSelectBtnClickListener() {
         binding.btnIncomeAddPayday.setOnClickListener {
-            viewModel.selectPayday(binding.numberpickerBottomsheetIncomeAddPayday.value.toString())
+            viewModel.selectPayday(setTextPattern(binding.numberpickerBottomsheetIncomeAddPayday.value))
             dismiss()
         }
+    }
+
+    private fun setTextPattern(value: Int) = when (value) {
+        1 -> "1st"
+        2 -> "2nd"
+        3 -> "3rd"
+        else -> value.toString() + "th"
     }
 }

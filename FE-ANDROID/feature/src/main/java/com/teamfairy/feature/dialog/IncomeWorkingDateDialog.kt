@@ -37,10 +37,10 @@ class IncomeWorkingDateDialog() :
 
     private fun setDate(day: String): String {
         val calendar = Calendar.getInstance()
-        val currentDayOfYear = calendar.get(Calendar.DAY_OF_YEAR)
+        val currentYear = calendar.get(Calendar.YEAR)
         val thisMonth = SimpleDateFormat("MMM", Locale.ENGLISH).format(calendar.time)
 
-        return "$currentDayOfYear, $thisMonth $day"
+        return "$currentYear, $thisMonth $day"
     }
 
 
