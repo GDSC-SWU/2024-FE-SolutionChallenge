@@ -57,6 +57,7 @@
             android:includeFontPadding="false"
             android:paddingHorizontal="20dp"
             android:paddingVertical="14dp"
+            android:stateListAnimator="@null"
             android:text="@string/btn_sign_in_navigate_main"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.FE.Bold_16"
