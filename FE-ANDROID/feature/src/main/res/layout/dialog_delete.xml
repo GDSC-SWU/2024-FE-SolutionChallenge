@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_fill_grayf5_7_rec"
+        android:backgroundTint="@color/bg_white">
+
+        <TextView
+            android:id="@+id/tv_dialog_delete_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="Delete this schedule"
+            android:textAppearance="@style/TextAppearance.FE.Bold_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_dialog_delete"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="22dp"
+            app:dividerColor="@color/gray_e1"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_delete_title" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_dialog_delete_2"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:dividerColor="@color/gray_e1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_delete"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_delete"
+            app:layout_constraintTop_toBottomOf="@id/divider_dialog_delete" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_delete_dialog_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="NO"
+            android:padding="10dp"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_dialog_delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_dialog_delete" />
+
+        <TextView
+            android:id="@+id/tv_delete_dialog_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:includeFontPadding="false"
+            android:text="YES"
+            android:textAppearance="@style/TextAppearance.FE.Medium_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_dialog_delete"
+            app:layout_constraintTop_toBottomOf="@id/divider_dialog_delete" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

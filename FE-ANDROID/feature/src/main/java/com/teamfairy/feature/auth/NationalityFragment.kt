@@ -10,9 +10,9 @@ class NationalityFragment :
     BindingFragment<FragmentNationalityBinding>(R.layout.fragment_nationality) {
     override fun initView() {
         statusBarColorOf(R.color.bg_white)
+        binding.ivNationalityCheckChina.isSelected = true
         setChinaCheckBoxClickListener()
         setVietnamCheckBoxClickListener()
-        setCompletionBtnStatus()
         setCompletionClickListener()
     }
 
@@ -20,24 +20,15 @@ class NationalityFragment :
         binding.ivNationalityCheckChina.setOnClickListener {
             if (binding.ivNationalityCheckVietnam.isSelected) binding.ivNationalityCheckVietnam.isSelected =
                 false
-            binding.ivNationalityCheckChina.isSelected = !binding.ivNationalityCheckChina.isSelected
+            binding.ivNationalityCheckChina.isSelected = true
         }
 
     private fun setVietnamCheckBoxClickListener() =
         binding.ivNationalityCheckVietnam.setOnClickListener {
             if (binding.ivNationalityCheckChina.isSelected) binding.ivNationalityCheckChina.isSelected =
                 false
-            binding.ivNationalityCheckVietnam.isSelected =
-                !binding.ivNationalityCheckVietnam.isSelected
+            binding.ivNationalityCheckVietnam.isSelected = true
         }
-
-    private fun setCompletionBtnStatus() {
-        binding.btnNationality.isSelected =
-            (binding.ivNationalityCheckChina.isSelected || binding.ivNationalityCheckVietnam.isSelected)
-        binding.btnNationality.isClickable =
-            (binding.ivNationalityCheckChina.isSelected || binding.ivNationalityCheckVietnam.isSelected)
-    }
-
 
     private fun setCompletionClickListener() =
         binding.btnNationality.setOnClickListener {

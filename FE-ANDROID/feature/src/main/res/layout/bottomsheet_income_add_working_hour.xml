@@ -37,6 +37,7 @@
             tools:text="Mon, Aug 17" />
 
         <ImageView
+            android:id="@+id/iv_add_working_hour_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="11dp"

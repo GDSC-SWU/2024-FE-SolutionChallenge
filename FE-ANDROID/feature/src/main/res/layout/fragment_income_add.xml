@@ -13,7 +13,7 @@
         <include
             android:id="@+id/appbar_income_add"
             layout="@layout/view_appbar"
-            app:back="@{false}"
+            app:back="@{true}"
             app:title="@{@string/tv_income_add_appbar_title}" />
 
         <androidx.core.widget.NestedScrollView
@@ -126,6 +126,8 @@
                     android:backgroundTint="@color/gray_cd"
                     android:hint="0,000,000"
                     android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:maxLength="7"
                     android:paddingStart="5dp"
                     android:paddingEnd="18dp"
                     android:switchTextAppearance="@style/TextAppearance.FE.Regular_12"

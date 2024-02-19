@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_fill_main_15_rec"
+        android:backgroundTint="@color/sub_color"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:id="@+id/tv_income_tax_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_income_tax_title"
+            android:textAppearance="@style/TextAppearance.FE.Medium_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_income_tax_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="22dp"
+            android:src="@drawable/ic_income_tax_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_income_tax_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="36dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_income_tax_description"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.FE.Regular_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_tax_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
