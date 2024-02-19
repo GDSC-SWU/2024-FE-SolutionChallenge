@@ -9,6 +9,12 @@
         <item name="android:letterSpacing">-0.011</item>
     </style>
 
+    <style name="TextAppearance.FE.Bold_26">
+        <item name="fontFamily">@font/font_notosans_bold</item>
+        <item name="android:textSize">26sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
     <style name="TextAppearance.FE.Bold_16">
         <item name="fontFamily">@font/font_notosans_bold</item>
         <item name="android:textSize">16sp</item>
@@ -18,6 +24,12 @@
     <style name="TextAppearance.FE.Bold_14">
         <item name="fontFamily">@font/font_notosans_bold</item>
         <item name="android:textSize">14sp</item>
+        <item name="lineHeight">21dp</item>
+    </style>
+
+    <style name="TextAppearance.FE.Bold_12">
+        <item name="fontFamily">@font/font_notosans_bold</item>
+        <item name="android:textSize">12sp</item>
         <item name="lineHeight">21dp</item>
     </style>
 

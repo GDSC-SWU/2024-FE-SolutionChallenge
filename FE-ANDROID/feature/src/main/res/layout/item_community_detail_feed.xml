@@ -34,7 +34,7 @@
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="@id/guideline_item_community_detail_feed_start_28"
             app:layout_constraintTop_toTopOf="@id/tv_item_community_detail_feed_nickname"
-            tools:src="@drawable/ic_profile" />
+            android:src="@drawable/ic_profile" />
 
         <TextView
             android:id="@+id/tv_item_community_detail_feed_nickname"
@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_item_community_detail_feed_end_28"
             app:layout_constraintStart_toEndOf="@id/iv_item_community_detail_feed_profile"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="nickname" />
+            android:text="nickname" />
 
         <TextView
             android:id="@+id/tv_item_community_detail_feed_time"
@@ -61,7 +61,7 @@
             android:textColor="@color/gray_85"
             app:layout_constraintStart_toStartOf="@id/tv_item_community_detail_feed_nickname"
             app:layout_constraintTop_toBottomOf="@id/tv_item_community_detail_feed_nickname"
-            tools:text="2H ago" />
+            android:text="2H ago" />
 
         <TextView
             android:id="@+id/tv_item_community_detail_feed_title"
@@ -73,7 +73,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_item_community_detail_feed_end_28"
             app:layout_constraintStart_toEndOf="@id/guideline_item_community_detail_feed_start_28"
             app:layout_constraintTop_toBottomOf="@id/iv_item_community_detail_feed_profile"
-            tools:text="title" />
+            android:text="title" />
 
         <TextView
             android:id="@+id/tv_item_community_detail_feed_content"
@@ -85,7 +85,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_item_community_detail_feed_end_28"
             app:layout_constraintStart_toEndOf="@id/guideline_item_community_detail_feed_start_28"
             app:layout_constraintTop_toBottomOf="@id/tv_item_community_detail_feed_title"
-            tools:text="@string/dummy" />
+            android:text="@string/dummy" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider_item_community_detail"

@@ -23,6 +23,7 @@ dependencies {
     implementation(libs.fragment.ktx)
     implementation(libs.splash.screen)
     implementation(libs.recycler)
+    implementation(libs.google.play)
 
     // Third Party
     implementation(libs.coil.core)

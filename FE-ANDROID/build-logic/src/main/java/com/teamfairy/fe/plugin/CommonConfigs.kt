@@ -23,10 +23,12 @@ internal fun Project.configureAndroidCommonPlugin() {
     extensions.getByType<BaseExtension>().apply {
         defaultConfig {
             val feBaseUrl = properties["fe.base.url"] as? String ?: ""
+            val clientId = properties["client.id"] as? String ?: ""
 
             manifestPlaceholders["feBaseUrl"] = properties["fe.base.url"] as String
 
             buildConfigField("String", "FE_BASE_URL", "\"${feBaseUrl}\"")
+            buildConfigField("String", "CLIENT_ID", "\"${clientId}\"")
         }
         buildFeatures.apply {
             viewBinding = true
