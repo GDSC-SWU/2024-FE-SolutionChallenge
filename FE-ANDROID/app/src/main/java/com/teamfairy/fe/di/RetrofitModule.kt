@@ -2,13 +2,18 @@ package com.teamfairy.fe.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.teamfairy.BuildConfig.FE_BASE_URL
+import com.teamfairy.data.datasource.SharedPreferenceDataSource
+import com.teamfairy.data.datasourceimpl.SharedPreferenceDataSourceImpl
+import com.teamfairy.fe.interceptor.TokenInterceptor
 import com.velogandroid.di.extension.isJsonArray
 import com.velogandroid.di.extension.isJsonObject
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,18 +27,40 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
+    @OptIn(ExperimentalSerializationApi::class)
+    @Provides
+    @Singleton
+    fun providesJson(): Json =
+        Json {
+            isLenient = true
+            prettyPrint = true
+            explicitNulls = false
+            ignoreUnknownKeys = true
+        }
+
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        loggingInterceptor: HttpLoggingInterceptor
+        loggingInterceptor: HttpLoggingInterceptor,
+        @AccessToken tokenInterceptor: Interceptor,
     ): OkHttpClient =
         OkHttpClient.Builder().apply {
             connectTimeout(10, TimeUnit.SECONDS)
             writeTimeout(5, TimeUnit.SECONDS)
             readTimeout(5, TimeUnit.SECONDS)
         }.addInterceptor(loggingInterceptor)
+            .addInterceptor(tokenInterceptor)
             .build()
 
+    @Provides
+    @Singleton
+    fun provideDataStore(DataStore: SharedPreferenceDataSourceImpl): SharedPreferenceDataSource =
+        DataStore
+
+    @Provides
+    @Singleton
+    @AccessToken
+    fun provideAuthInterceptor(interceptor: TokenInterceptor): Interceptor = interceptor
 
     @Provides
     @Singleton
@@ -51,7 +78,7 @@ object RetrofitModule {
 
     @Singleton
     @Provides
-    @DontbeRetrofit
+    @FeRetrofit
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
         .baseUrl(FE_BASE_URL)

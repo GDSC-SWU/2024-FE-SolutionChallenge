@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main.xml"
-    app:startDestination="@id/navigation_income">
+    app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/navigation_income"
         android:name="com.teamfairy.feature.income.IncomeFragment"
         android:label="IncomeFragment"
-        tools:layout="@layout/fragment_income" >
+        tools:layout="@layout/fragment_income">
         <action
             android:id="@+id/action_income_to_incomeDetail"
             app:destination="@id/incomeDetailFragment" />
+        <action
+            android:id="@+id/action_income_to_incomeAdd"
+            app:destination="@id/incomeAddFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_consumption"
@@ -23,7 +26,7 @@
         android:id="@+id/navigation_community"
         android:name="com.teamfairy.feature.community.CommunityFragment"
         android:label="CommunityFragment"
-        tools:layout="@layout/fragment_community" >
+        tools:layout="@layout/fragment_community">
         <action
             android:id="@+id/action_navigation_community_to_communityPosting"
             app:destination="@id/communityPosting" />
@@ -41,4 +44,18 @@
         android:id="@+id/incomeDetailFragment"
         android:name="com.teamfairy.feature.incomedetail.IncomeDetailFragment"
         android:label="IncomeDetailFragment" />
+    <fragment
+        android:id="@+id/incomeAddFragment"
+        android:name="com.teamfairy.feature.income.IncomeAddFragment"
+        android:label="IncomeAddFragment" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.teamfairy.feature.auth.SignInFragment"
+        android:label="SignInFragment">
+        <action
+            android:id="@+id/action_signIn_to_income"
+            app:destination="@id/navigation_income"
+            app:popUpTo="@layout/fragment_income"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

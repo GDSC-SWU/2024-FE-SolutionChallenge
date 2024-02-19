@@ -40,4 +40,5 @@ dependencies {
     // Third Party
     implementation(libs.coil.core)
     implementation(libs.bundles.retrofit)
+    implementation(libs.shared.security)
 }

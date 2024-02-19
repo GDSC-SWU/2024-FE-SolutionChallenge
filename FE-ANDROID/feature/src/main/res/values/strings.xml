@@ -32,4 +32,8 @@
     <string name="tv_income_detail_work_check_filter_latest">latest</string>
     <string name="format_date_yyyy.MM">yyyy.MM</string>
     <string name="format_date_MMM_d">MMM d</string>
+    <string name="tv_income_add_appbar_title">Add Schedule</string>
+    <string name="tv_sign_in_title">FairE</string>
+    <string name="tv_sign_in_description">Fair Economy for you</string>
+    <string name="btn_sign_in_navigate_main">Continue with google</string>
 </resources>

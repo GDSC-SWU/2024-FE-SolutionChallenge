@@ -4,5 +4,8 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class DontbeRetrofit
+annotation class FeRetrofit
 
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class AccessToken
