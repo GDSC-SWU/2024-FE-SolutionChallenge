@@ -12,6 +12,16 @@
         android:paddingHorizontal="16dp"
         android:paddingBottom="21dp">
 
+        <ImageView
+            android:id="@+id/iv_community_comment_kebab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:src="@drawable/ic_community_kebab"
+            app:layout_constraintBottom_toBottomOf="@id/tv_item_community_comment_nickname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_item_community_comment_nickname" />
+
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider_item_community_comment"
             android:layout_width="match_parent"

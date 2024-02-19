@@ -141,6 +141,7 @@
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_4" />
 
         <TextView
+            android:id="@+id/tv_consumption_price_children_korea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
@@ -191,6 +192,7 @@
             app:setExchangePrice="@{`1700`}" />
 
         <TextView
+            android:id="@+id/tv_consumption_price_children_my_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
