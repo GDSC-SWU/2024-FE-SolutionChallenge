@@ -41,4 +41,8 @@
     <string name="tv_nationality_china">China</string>
     <string name="tv_nationality_vietnam">Vietnam</string>
     <string name="btn_nationality">Completion</string>
+    <string name="tv_select_type_salary_hourly">Hourly wage</string>
+    <string name="tv_select_type_salary_monthly">Monthly wage</string>
+    <string name="tv_select_type_salary_weekly">Weekly wage</string>
+    <string name="tv_income_add_working_hour">Please select working hour.</string>
 </resources>

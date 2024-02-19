@@ -11,13 +11,14 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape_white_fill_top8_rec">
 
-        <com.google.android.material.divider.MaterialDivider
+        <View
             android:id="@+id/bottomsheet_income_add_payday_divider"
             android:layout_width="0dp"
             android:layout_height="4dp"
+            android:background="@drawable/shape_fill_grayf5_7_rec"
             android:layout_marginHorizontal="140dp"
             android:layout_marginTop="18dp"
-            app:dividerColor="@color/gray_48"
+            android:backgroundTint="@color/gray_48"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
