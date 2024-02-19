@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="33dp">
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/bottomsheet_income_add_salary_divider"
@@ -43,26 +44,33 @@
             app:layout_constraintTop_toBottomOf="@id/tv_bottomsheet_income_add_salary">
 
             <RadioButton
+                android:id="@+id/tv_select_type_salary_hourly"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/sel_income_add_salary_type_check"
-                android:button="@null" />
+                android:button="@null"
+                android:drawableStart="@drawable/sel_income_add_salary_type_check"
+                android:drawablePadding="11dp"
+                android:text="@string/tv_select_type_salary_hourly" />
 
             <RadioButton
+                android:id="@+id/tv_select_type_salary_monthly"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/sel_income_add_salary_type_check"
-                android:button="@null" />
+                android:button="@null"
+                android:drawableStart="@drawable/sel_income_add_salary_type_check"
+                android:drawablePadding="11dp"
+                android:text="@string/tv_select_type_salary_monthly" />
 
             <RadioButton
+                android:id="@+id/tv_select_type_salary_weekly"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/sel_income_add_salary_type_check"
-                android:button="@null" />
-
-
+                android:button="@null"
+                android:drawableStart="@drawable/sel_income_add_salary_type_check"
+                android:drawablePadding="11dp"
+                android:text="@string/tv_select_type_salary_weekly" />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
