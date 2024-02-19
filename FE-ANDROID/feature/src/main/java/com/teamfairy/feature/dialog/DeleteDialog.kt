@@ -20,11 +20,13 @@ class DeleteDialog(val title: String,val type:Int) :
     }
 
     private fun setYesBtnClickListener() {
-        when(type){
-            0 -> dismiss()
-            1 -> {
-                findNavController().popBackStack()
-                dismiss()
+        binding.tvDeleteDialogYes.setOnClickListener {
+            when(type){
+                0 -> dismiss()
+                1 -> {
+                    findNavController().popBackStack()
+                    dismiss()
+                }
             }
         }
     }
