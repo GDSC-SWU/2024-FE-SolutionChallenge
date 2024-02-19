@@ -174,8 +174,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_3"
-            app:setExchangeCountry="1"
-            app:setExchangePrice="3000" />
+            app:setExchangeCountry="@{`1`}"
+            app:setExchangePrice="@{`3000`}" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -187,8 +187,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_4"
-            app:setExchangeCountry="1"
-            app:setExchangePrice="1700" />
+            app:setExchangeCountry="@{`1`}"
+            app:setExchangePrice="@{`1700`}" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -200,8 +200,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_5"
-            app:setExchangeCountry="1"
-            app:setExchangePrice="1500" />
+            app:setExchangeCountry="@{`1`}"
+            app:setExchangePrice="@{`1500`}" />
 
         <TextView
             android:layout_width="wrap_content"
