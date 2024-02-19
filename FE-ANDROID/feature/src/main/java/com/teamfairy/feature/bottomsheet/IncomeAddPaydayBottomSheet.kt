@@ -1,13 +1,11 @@
 package com.teamfairy.feature.bottomsheet
 
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import com.teamfairy.core_ui.base.BindingBottomSheetFragment
 import com.teamfairy.feature.R
 import com.teamfairy.feature.databinding.BottomsheetIncomeAddPaydayBinding
 import com.teamfairy.feature.income.IncomeViewModel
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class IncomeAddPaydayBottomSheet :
     BindingBottomSheetFragment<BottomsheetIncomeAddPaydayBinding>(R.layout.bottomsheet_income_add_payday) {
@@ -42,9 +40,9 @@ class IncomeAddPaydayBottomSheet :
         return dayLabels
     }
 
-    private fun setSelectBtnClickListener(){
+    private fun setSelectBtnClickListener() {
         binding.btnIncomeAddPayday.setOnClickListener {
-            viewModel.selectPayday(binding.numberpickerBottomsheetIncomeAddPayday.displayedValues.toString())
+            viewModel.selectPayday(binding.numberpickerBottomsheetIncomeAddPayday.value.toString())
             dismiss()
         }
     }

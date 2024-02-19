@@ -1,22 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_fill_main_20_rec"
+        android:backgroundTint="@color/white">
 
-        <DatePicker
-            android:background="@color/white"
-            android:id="@+id/datepicker_income_add_work"
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/layout_when_calender_week"
+            layout="@layout/view_calender_week"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="22dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_when_calender_year_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            app:layout_constraintStart_toStartOf="@id/layout_when_calender_week"
+            app:layout_constraintTop_toBottomOf="@id/layout_when_calender_week"
+            tools:text="2022.01.01" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_when_calender_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="6dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_when_calender_year_month"
+            app:spanCount="7"
+            tools:itemCount="42"
+            tools:listitem="@layout/item_calender_date" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -13,20 +13,25 @@ class IncomeAddWorkingHourBottomSheet :
         binding.numberpickerIncomeAddWorkingHour.minValue = 1
         binding.numberpickerIncomeAddWorkingHour.displayedValues = list
         setCancelBtnClickListener()
+        binding.tvIncomeAddWorkingHourDate.text = tag
     }
 
     private fun generateHourLabels(): Array<String> {
         val hours = 24
         val timeArray = Array(hours) { "" }
-
         var startHour = 0
         var startMinute = 0
 
         for (i in 0 until hours) {
-            val timeString = "%02d:%02d".format(startHour, startMinute)
+            val hour = startHour
+            val timeString = when (val minute = startMinute) {
+                0 -> "$hour hour"
+                30 -> "$hour hour 30min"
+                else -> "$minute min"
+            }
+
             timeArray[i] = timeString
 
-            // 30분 단위로 시간 증가
             startMinute += 30
             if (startMinute == 60) {
                 startHour++
