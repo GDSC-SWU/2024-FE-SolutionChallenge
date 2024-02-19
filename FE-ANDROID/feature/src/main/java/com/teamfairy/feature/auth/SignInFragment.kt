@@ -13,6 +13,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.teamfairy.core_ui.base.BindingFragment
+import com.teamfairy.core_ui.util.fragment.statusBarColorOf
 import com.teamfairy.core_ui.view.UiState
 import com.teamfairy.feature.BuildConfig.CLIENT_ID
 import com.teamfairy.feature.R
@@ -30,6 +31,7 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
     private lateinit var googleSignResultLauncher: ActivityResultLauncher<Intent>
 
     override fun initView() {
+        statusBarColorOf(R.color.main_color)
         getGoogleClient()
         googleSignResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
@@ -62,7 +64,7 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
             if (!googleIdToken.isNullOrBlank()) {
                 Timber.tag("idToken").d(googleIdToken)
                 //viewModel.postSignIn(googleIdToken)
-                findNavController().navigate(R.id.action_signIn_to_income)
+                findNavController().navigate(R.id.action_signIn_to_nationality)
             }
         } catch (e: ApiException) {
             Timber.d("signInResult:failed Code = " + e.statusCode)
@@ -75,7 +77,7 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
                 is UiState.Success -> {
                     viewModel.saveCheckLogin(true)
                     saveUserInfo(it.data.accessToken, it.data.refreshToken)
-                    findNavController().navigate(R.id.action_signIn_to_income)
+                    findNavController().navigate(R.id.action_signIn_to_nationality)
                 }
 
                 else -> Unit

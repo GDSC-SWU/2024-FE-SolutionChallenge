@@ -53,9 +53,15 @@
         android:name="com.teamfairy.feature.auth.SignInFragment"
         android:label="SignInFragment">
         <action
-            android:id="@+id/action_signIn_to_income"
-            app:destination="@id/navigation_income"
-            app:popUpTo="@layout/fragment_income"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_signIn_to_nationality"
+            app:destination="@id/nationalityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nationalityFragment"
+        android:name="com.teamfairy.feature.auth.NationalityFragment"
+        android:label="NationalityFragment" >
+        <action
+            android:id="@+id/action_nationality_to_income"
+            app:destination="@id/navigation_income" />
     </fragment>
 </navigation>

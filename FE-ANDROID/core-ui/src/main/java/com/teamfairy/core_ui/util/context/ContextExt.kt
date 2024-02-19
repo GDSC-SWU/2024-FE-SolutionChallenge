@@ -59,3 +59,11 @@ fun Context.pxToDp(px: Int): Int {
         resources.displayMetrics,
     ).toInt()
 }
+
+fun Context.statusBarColorOf(
+    @ColorRes resId: Int,
+) {
+    if (this is Activity) {
+        window?.statusBarColor = colorOf(resId)
+    }
+}
