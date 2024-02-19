@@ -45,4 +45,6 @@
     <string name="tv_select_type_salary_monthly">Monthly wage</string>
     <string name="tv_select_type_salary_weekly">Weekly wage</string>
     <string name="tv_income_add_working_hour">Please select working hour.</string>
+    <string name="tv_income_tax_title">Tax 3.3%</string>
+    <string name="tv_income_tax_description">The 3.3 percent tax is usually an income tax on earned income, which is levied on the income earned by an individual through work. The tax rate is usually applied in the process of filing and paying income taxes each year between May and June, after the end of the year in which earned income is generated. The exact tax period and procedure may vary depending on the tax laws of national and local governments.</string>
 </resources>

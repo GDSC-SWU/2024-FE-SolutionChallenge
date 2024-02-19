@@ -59,9 +59,11 @@
     <fragment
         android:id="@+id/nationalityFragment"
         android:name="com.teamfairy.feature.auth.NationalityFragment"
-        android:label="NationalityFragment" >
+        android:label="NationalityFragment">
         <action
             android:id="@+id/action_nationality_to_income"
-            app:destination="@id/navigation_income" />
+            app:destination="@id/navigation_income"
+            app:popUpTo="@id/navigation_income"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

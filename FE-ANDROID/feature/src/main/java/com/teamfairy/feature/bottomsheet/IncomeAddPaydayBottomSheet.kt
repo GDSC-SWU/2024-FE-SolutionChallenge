@@ -1,25 +1,31 @@
 package com.teamfairy.feature.bottomsheet
 
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.teamfairy.core_ui.base.BindingBottomSheetFragment
 import com.teamfairy.feature.R
 import com.teamfairy.feature.databinding.BottomsheetIncomeAddPaydayBinding
+import com.teamfairy.feature.income.IncomeViewModel
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class IncomeAddPaydayBottomSheet :
     BindingBottomSheetFragment<BottomsheetIncomeAddPaydayBinding>(R.layout.bottomsheet_income_add_payday) {
+
+    private val viewModel by activityViewModels<IncomeViewModel>()
+
     override fun initView() {
         val list = generateDayLabels()
         binding.numberpickerBottomsheetIncomeAddPayday.maxValue = list.size
         binding.numberpickerBottomsheetIncomeAddPayday.minValue = 1
         binding.numberpickerBottomsheetIncomeAddPayday.displayedValues = list
+        setSelectBtnClickListener()
     }
 
     private fun generateDayLabels(): Array<String> {
         val currentDate = LocalDate.now()
         val year = currentDate.year
         val month = currentDate.monthValue
-        val formatter = DateTimeFormatter.ofPattern("d")
         val lastDay = LocalDate.of(year, month, 1).plusMonths(1).minusDays(1).dayOfMonth
         val dayLabels = Array(lastDay) { "" }
         for (day in 1..lastDay) {
@@ -34,5 +40,12 @@ class IncomeAddPaydayBottomSheet :
             dayLabels[day - 1] = label
         }
         return dayLabels
+    }
+
+    private fun setSelectBtnClickListener(){
+        binding.btnIncomeAddPayday.setOnClickListener {
+            viewModel.selectPayday(binding.numberpickerBottomsheetIncomeAddPayday.displayedValues.toString())
+            dismiss()
+        }
     }
 }

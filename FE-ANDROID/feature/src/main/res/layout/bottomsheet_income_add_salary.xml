@@ -9,15 +9,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_white_fill_top8_rec"
         android:paddingBottom="33dp">
 
-        <com.google.android.material.divider.MaterialDivider
+        <View
             android:id="@+id/bottomsheet_income_add_salary_divider"
             android:layout_width="0dp"
             android:layout_height="4dp"
             android:layout_marginHorizontal="140dp"
             android:layout_marginTop="20dp"
-            app:dividerColor="@color/gray_48"
+            android:background="@drawable/shape_fill_grayf5_7_rec"
+            android:backgroundTint="@color/gray_48"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +37,7 @@
             app:layout_constraintTop_toBottomOf="@id/bottomsheet_income_add_salary_divider" />
 
         <RadioGroup
+            android:id="@+id/rg_select_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
