@@ -57,4 +57,12 @@ class UserInfoRepositoryImpl
     override fun saveMemberProfileUrl(memberUrl: String) {
         sharedPreferenceDataSource.memberProfileUrl = memberUrl
     }
+
+    override fun saveNationality(nation: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getNationality(): String {
+        TODO("Not yet implemented")
+    }
 }

@@ -29,6 +29,9 @@ constructor(
     override var memberProfileUrl: String?
         get() = sharedPreferences.getString("MemberProfileUrl", null)
         set(value) = sharedPreferences.edit { putString("MemberProfileUrl", value) }
+    override var nation: String?
+        get() = sharedPreferences.getString(" nation", null)
+        set(value) = sharedPreferences.edit { putString(" nation", value) }
 
     override fun clear() {
         sharedPreferences.edit {
