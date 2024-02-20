@@ -63,7 +63,7 @@
         <action
             android:id="@+id/action_nationality_to_income"
             app:destination="@id/navigation_income"
-            app:popUpTo="@id/nationalityFragment"
+            app:popUpTo="@id/navigation_income"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
