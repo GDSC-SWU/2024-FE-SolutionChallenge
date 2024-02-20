@@ -6,6 +6,7 @@ import com.teamfairy.feature.databinding.ItemCommunityDetailFeedBinding
 
 class CommunityDetailFeedViewHolder(
     private val binding: ItemCommunityDetailFeedBinding,
+    private val onClickKebab: (FeedEntity) -> Unit
 ) :
     RecyclerView.ViewHolder(binding.root) {
 

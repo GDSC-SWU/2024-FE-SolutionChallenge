@@ -1,13 +1,11 @@
 package com.teamfairy.fe.di
 
+import com.teamfairy.data.datasource.CommunityDataSource
 import com.teamfairy.data.datasource.IncomeDataSource
-import com.teamfairy.data.datasource.SharedPreferenceDataSource
 import com.teamfairy.data.datasource.SignInDataSource
+import com.teamfairy.data.datasourceimpl.CommunityDataSourceImpl
 import com.teamfairy.data.datasourceimpl.IncomeDataSourceImpl
-import com.teamfairy.data.datasourceimpl.SharedPreferenceDataSourceImpl
 import com.teamfairy.data.datasourceimpl.SignInDataSourceImpl
-import com.teamfairy.data.repositoryimpl.UserInfoRepositoryImpl
-import com.teamfairy.domain.repository.UserInfoRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -24,4 +22,8 @@ abstract class DataSourceModule {
     @Singleton
     @Binds
     abstract fun providesIncomeDataSource(dataSourceImpl: IncomeDataSourceImpl): IncomeDataSource
+
+    @Singleton
+    @Binds
+    abstract fun providesCommunityDataSource(dataSourceImpl: CommunityDataSourceImpl): CommunityDataSource
 }

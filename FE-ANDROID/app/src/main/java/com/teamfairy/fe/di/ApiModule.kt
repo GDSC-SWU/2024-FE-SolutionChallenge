@@ -1,5 +1,6 @@
 package com.teamfairy.fe.di
 
+import com.teamfairy.data.api.CommunityApiService
 import com.teamfairy.data.api.IncomeApiService
 import com.teamfairy.data.api.SignInApiService
 import dagger.Module
@@ -21,4 +22,9 @@ object ApiModule {
     @Singleton
     fun provideIncomeService(@FeRetrofit retrofit: Retrofit): IncomeApiService =
         retrofit.create(IncomeApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideCommunityService(@FeRetrofit retrofit: Retrofit): CommunityApiService =
+        retrofit.create(CommunityApiService::class.java)
 }

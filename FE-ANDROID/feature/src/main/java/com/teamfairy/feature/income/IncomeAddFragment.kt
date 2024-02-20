@@ -149,7 +149,7 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
 
     private fun setBackBtnClickLListener() {
         binding.appbarIncomeAdd.ivAppbarBack.setOnClickListener {
-            val dialog = DeleteDialog("Do you want to cancel it", 1)
+            val dialog = DeleteDialog("Do you want to cancel it?", 1)
             dialog.show(childFragmentManager, "delete")
         }
     }

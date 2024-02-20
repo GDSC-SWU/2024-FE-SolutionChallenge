@@ -1,5 +1,7 @@
 package com.teamfairy.feature.income.viewholder
 
+import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.teamfairy.domain.entity.IncomeCardEntity
 import com.teamfairy.feature.databinding.ItemIncomeCardIngBinding
@@ -18,7 +20,13 @@ class IncomeCardIngViewHolder(
             income = data
             executePendingBindings()
 
-            root.setOnClickListener { onMoveToIncomeDetailClick(data) }
+            if (data.incomeId == -1) {
+                binding.tvIncomeCardSalaryEmpty.isVisible = true
+                binding.tvIncomeCardSalary.visibility = View.INVISIBLE
+                binding.switchItemIncomeCard.isVisible = false
+            }else{
+                root.setOnClickListener { onMoveToIncomeDetailClick(data) }
+            }
             binding.switchItemIncomeCard.setOnClickListener {
                 if (binding.switchItemIncomeCard.isChecked) {
                     binding.tvIncomeCardSalary.exchange(data.currentSalary, countryCode.toString())

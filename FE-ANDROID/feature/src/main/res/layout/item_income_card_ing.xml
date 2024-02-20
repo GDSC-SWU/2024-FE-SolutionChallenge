@@ -72,6 +72,7 @@
 
         <TextView
             android:id="@+id/tv_income_card_salary"
+            changePriceFormant="@{income.currentSalary}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25dp"
@@ -80,7 +81,6 @@
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"
-            changePriceFormant="@{income.currentSalary}"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.FE.Bold_16"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -88,5 +88,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_income_card_time"
             tools:text="1,000" />
+
+        <TextView
+            android:id="@+id/tv_income_card_salary_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Add your work schedule."
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.FE.Bold_16"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

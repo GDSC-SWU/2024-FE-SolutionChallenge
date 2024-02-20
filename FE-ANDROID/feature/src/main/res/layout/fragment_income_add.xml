@@ -112,7 +112,7 @@
                     android:includeFontPadding="false"
                     android:paddingEnd="6dp"
                     android:paddingBottom="2dp"
-                    android:text="Hourlywage"
+                    android:text="Hourly wage"
                     android:textAppearance="@style/TextAppearance.FE.Regular_14"
                     app:drawableEndCompat="@drawable/ic_income_add_bottomsheet"
                     app:layout_constraintStart_toStartOf="parent"

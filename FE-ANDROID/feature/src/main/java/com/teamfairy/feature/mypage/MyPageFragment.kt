@@ -1,11 +1,11 @@
 package com.teamfairy.feature.mypage
 
 import androidx.fragment.app.viewModels
-import coil.load
 import com.teamfairy.core_ui.base.BindingFragment
 import com.teamfairy.feature.R
 import com.teamfairy.feature.auth.SignInViewModel
 import com.teamfairy.feature.databinding.FragmentMyPageBinding
+import com.teamfairy.feature.dialog.DeleteDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,9 +13,16 @@ class MyPageFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_
 
     private val viewModel by viewModels<SignInViewModel>()
     override fun initView() {
-        binding.tvMyPageNickname.text = viewModel.getNickName()
+        binding.viewmodel = viewModel
         binding.tvMyPageNationality.text =
             "Natoinality : " + if (viewModel.getNationality() == "1") "China" else "Vietnam"
-        binding.ivMyPageProfile.load(viewModel.getMemberProfileUrl())
+        setSignOutClickListener()
+    }
+
+    private fun setSignOutClickListener() {
+        binding.tvMyPageSignOut.setOnClickListener {
+            val dialog = DeleteDialog("Sign Out?", 4)
+            dialog.show(childFragmentManager, "delete")
+        }
     }
 }

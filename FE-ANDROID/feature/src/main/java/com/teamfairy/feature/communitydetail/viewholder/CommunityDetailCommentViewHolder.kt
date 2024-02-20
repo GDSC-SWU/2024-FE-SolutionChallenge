@@ -7,6 +7,7 @@ import com.teamfairy.feature.databinding.ItemCommunityCommentBinding
 
 class CommunityDetailCommentViewHolder(
     private val binding: ItemCommunityCommentBinding,
+    private val onClickKebab: (CommentEntity) -> Unit
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
@@ -14,7 +15,7 @@ class CommunityDetailCommentViewHolder(
         with(binding) {
             tvItemCommunityCommentNickname.text = data.nickname
 
-            if(bindingAdapterPosition == 0 ) dividerItemCommunityComment.isVisible = false
+            if (bindingAdapterPosition == 0) dividerItemCommunityComment.isVisible = false
         }
     }
 }

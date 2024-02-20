@@ -43,6 +43,10 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
                 } else {
                     View.GONE
                 }
+
+            if (destination.id == R.id.incomeDetailFragment) {
+                binding.botNavMain.menu.findItem(R.id.navigation_income).isChecked = true
+            }
         }
     }
 }
