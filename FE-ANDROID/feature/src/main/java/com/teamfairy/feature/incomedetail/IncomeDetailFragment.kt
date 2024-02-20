@@ -26,7 +26,8 @@ class IncomeDetailFragment :
 
     private fun initIncomeCardAdapter() {
         incomeCardAdapter =
-            IncomeCardAdapter(onMoveToIncomeDetailClick = {}, onClickReceiveSalary = {}, today = -1
+            IncomeCardAdapter(onMoveToIncomeDetailClick = {}, onClickReceiveSalary = {}, today = -1,
+                countryCode = 0
             ).apply {
                 submitList(getParcelable(
                     KEY_INCOME_CARD, IncomeCard::class.java
