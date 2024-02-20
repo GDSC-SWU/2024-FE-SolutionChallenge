@@ -24,7 +24,7 @@ class IncomeCardAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return when (today) {
-            currentList[position].payDay.toInt() -> PAY_DAY
+            currentList[position].payDay?.toInt() -> PAY_DAY
             else -> ING
         }
     }
@@ -49,7 +49,7 @@ class IncomeCardAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (today) {
-            currentList[position].payDay.toInt() -> (holder as IncomeCardFinishViewHolder).run {
+            currentList[position].payDay?.toInt() -> (holder as IncomeCardFinishViewHolder).run {
                 bind(currentList[position])
             }
 

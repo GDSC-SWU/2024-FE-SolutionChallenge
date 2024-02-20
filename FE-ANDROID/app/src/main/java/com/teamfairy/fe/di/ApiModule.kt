@@ -1,5 +1,6 @@
 package com.teamfairy.fe.di
 
+import com.teamfairy.data.api.IncomeApiService
 import com.teamfairy.data.api.SignInApiService
 import dagger.Module
 import dagger.Provides
@@ -13,6 +14,11 @@ import javax.inject.Singleton
 object ApiModule {
     @Provides
     @Singleton
-    fun provideBookMarkService(@FeRetrofit retrofit: Retrofit): SignInApiService =
+    fun provideSignInService(@FeRetrofit retrofit: Retrofit): SignInApiService =
         retrofit.create(SignInApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideIncomeService(@FeRetrofit retrofit: Retrofit): IncomeApiService =
+        retrofit.create(IncomeApiService::class.java)
 }

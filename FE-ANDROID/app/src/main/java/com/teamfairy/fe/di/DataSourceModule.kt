@@ -1,7 +1,9 @@
 package com.teamfairy.fe.di
 
+import com.teamfairy.data.datasource.IncomeDataSource
 import com.teamfairy.data.datasource.SharedPreferenceDataSource
 import com.teamfairy.data.datasource.SignInDataSource
+import com.teamfairy.data.datasourceimpl.IncomeDataSourceImpl
 import com.teamfairy.data.datasourceimpl.SharedPreferenceDataSourceImpl
 import com.teamfairy.data.datasourceimpl.SignInDataSourceImpl
 import com.teamfairy.data.repositoryimpl.UserInfoRepositoryImpl
@@ -18,4 +20,8 @@ abstract class DataSourceModule {
     @Singleton
     @Binds
     abstract fun providesHomeDataSource(dataSourceImpl: SignInDataSourceImpl): SignInDataSource
+
+    @Singleton
+    @Binds
+    abstract fun providesIncomeDataSource(dataSourceImpl: IncomeDataSourceImpl): IncomeDataSource
 }

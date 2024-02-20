@@ -1,7 +1,9 @@
 package com.teamfairy.fe.di
 
+import com.teamfairy.data.repositoryimpl.IncomeRepositoryImpl
 import com.teamfairy.data.repositoryimpl.SignInRepositoryImpl
 import com.teamfairy.data.repositoryimpl.UserInfoRepositoryImpl
+import com.teamfairy.domain.repository.IncomeRepository
 import com.teamfairy.domain.repository.SignInRepository
 import com.teamfairy.domain.repository.UserInfoRepository
 import dagger.Binds
@@ -20,4 +22,9 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindUserInfoRepository(repositoryImpl: UserInfoRepositoryImpl): UserInfoRepository
+
+
+    @Binds
+    @Singleton
+    abstract fun bindIncomeInfoRepository(repositoryImpl: IncomeRepositoryImpl): IncomeRepository
 }

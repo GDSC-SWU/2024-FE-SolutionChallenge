@@ -9,5 +9,5 @@ interface SignInApiService {
     @POST("/oauth2/authorization/google")
     suspend fun postSignIn(
         @Header("id-token") idToken: String
-    ): BaseResponse<ResponseSignInDto>
+    ): ResponseSignInDto
 }
