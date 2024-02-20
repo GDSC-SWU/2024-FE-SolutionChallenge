@@ -54,7 +54,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="6dp"
             android:padding="10dp"
-            android:thumb="@drawable/ic_income_switch_thumb"
+            android:thumb="@drawable/sel_income_switch_thumb"
             android:track="@drawable/sel_income_switch_track"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,6 +71,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tv_income_card_salary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25dp"
