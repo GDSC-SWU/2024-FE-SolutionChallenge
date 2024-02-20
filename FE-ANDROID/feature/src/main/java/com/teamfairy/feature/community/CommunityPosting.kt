@@ -62,7 +62,7 @@ class CommunityPosting :
 
     private fun initCancelBtnClickListener() {
         binding.ivCommunityPostingCancel.setOnClickListener {
-            val dialog = DeleteDialog("Do you want to cancel it?", 6)
+            val dialog = DeleteDialog("Do you want to cancel it?", 6,-1)
             dialog.show(childFragmentManager, "delete")
         }
     }

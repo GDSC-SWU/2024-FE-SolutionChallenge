@@ -13,6 +13,10 @@ data class BaseResponse<T>(
     val errorCode: Int?,
     @SerialName("error")
     val error: String?,
-    @SerialName("data")
-    val data: T? = null
+    @SerialName("request")
+    val request: T? = null,
+    @SerialName("response")
+    val response: T? = null,
+    @SerialName("path")
+    val path: String? = null,
 )

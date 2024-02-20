@@ -3,6 +3,7 @@ package com.teamfairy.feature.community
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.teamfairy.core_ui.view.UiState
+import com.teamfairy.domain.entity.FeedEntity
 import com.teamfairy.domain.entity.PostCommentEntity
 import com.teamfairy.domain.entity.PostingFeedEntity
 import com.teamfairy.domain.repository.CommunityRepository
@@ -51,22 +52,25 @@ class CommunityViewModel @Inject constructor(
 
     fun getMemberId() = userInfoRepository.getMemberId()
 
-    private val _postCommunityList = MutableStateFlow<UiState<List<Unit>>>(UiState.Empty)
-    val postCommunityList: StateFlow<UiState<List<Unit>>> get() = _postCommunityList
+    private val _postCommunityList = MutableStateFlow<UiState<List<FeedEntity>>>(UiState.Empty)
+    val postCommunityList: StateFlow<UiState<List<FeedEntity>>> get() = _postCommunityList
 
-    fun postCommunityList(request: PostingFeedEntity) = viewModelScope.launch {
-        communityRepository.postCommunityList(request)
+    fun postCommunityList(type: String) = viewModelScope.launch {
+        communityRepository.postCommunityList(type)
             .fold({ if (it != null) _postCommunityList.value = UiState.Success(it) },
                 { UiState.Failure(it.message.toString()) })
     }
 
     fun postCommunityPosting(request: PostingFeedEntity) = viewModelScope.launch {
-        communityRepository.postCommunityList(request)
+        communityRepository.postCommunityPosting(request)
             .fold({ }, { UiState.Failure(it.message.toString()) })
     }
 
     private val _postCommunityDetail = MutableStateFlow<UiState<List<Unit>>>(UiState.Empty)
     val postCommunityDetail: StateFlow<UiState<List<Unit>>> get() = _postCommunityDetail
+
+    private val _postCommunitySharedDetail = MutableStateFlow<UiState<List<Unit>>>(UiState.Empty)
+    val postCommunitySharedDetail: StateFlow<UiState<List<Unit>>> get() = _postCommunitySharedDetail
 
     fun postCommunityDetail(tblCommunityId: Int) = viewModelScope.launch {
         communityRepository.postCommunityDetail(tblCommunityId)
@@ -74,18 +78,14 @@ class CommunityViewModel @Inject constructor(
                 { UiState.Failure(it.message.toString()) })
     }
 
+    fun postCommunitySharedDetail(tblCommunityId: Int) = viewModelScope.launch {
+        communityRepository.postCommunityDetail(tblCommunityId)
+            .fold({ if (it != null) _postCommunitySharedDetail.value = UiState.Success(it) },
+                { UiState.Failure(it.message.toString()) })
+    }
+
     fun postCommentPosting(request: PostCommentEntity) = viewModelScope.launch {
         communityRepository.postComment(request)
-            .fold({ }, { UiState.Failure(it.message.toString()) })
-    }
-
-    fun deleteComment(tblReplyId: Int) = viewModelScope.launch {
-        communityRepository.deleteComment(tblReplyId)
-            .fold({ }, { UiState.Failure(it.message.toString()) })
-    }
-
-    fun deleteFeed(tblCommunityId: Int) = viewModelScope.launch {
-        communityRepository.deleteCommunityFeed(tblCommunityId)
             .fold({ }, { UiState.Failure(it.message.toString()) })
     }
 }

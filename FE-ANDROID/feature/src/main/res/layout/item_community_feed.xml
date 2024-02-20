@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="data"
+            type="com.teamfairy.domain.entity.FeedEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +22,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="22dp"
             android:includeFontPadding="false"
+            android:text="@{data.title}"
             android:textAppearance="@style/TextAppearance.FE.Medium_12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,11 +36,11 @@
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="2"
+            android:text="@{data.content}"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
             app:layout_constraintEnd_toStartOf="@id/iv_item_community_img"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_item_community_title"
-            android:text="@string/dummy" />
+            app:layout_constraintTop_toBottomOf="@id/tv_item_community_title" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_item_community_img"

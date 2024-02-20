@@ -9,7 +9,6 @@ import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -21,7 +20,9 @@ constructor(
     private val context: Application,
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-        val accessToken = userInfoDataSource.accessToken
+        //val accessToken = userInfoDataSource.accessToken
+        val accessToken =
+            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA4NDM2MjkxLCJleHAiOjE3MDg0Mzk4OTF9.tAdjxblCBy3h87ha--v8cX5DGkyzxCND4Sa9jGFPxiqTi081grUHvaA8P6a7AV_mdxE8Ix2fjWcgZbyEgUL1MA"
         val refreshToken = userInfoDataSource.refreshToken
 
         // 기존 request
@@ -39,7 +40,10 @@ constructor(
 
                 val requestBodyJson = "{\"accessToken\": \"$accessToken\"}"
 
-                val requestBody = RequestBody.create("application/json; charset=utf-8".toMediaTypeOrNull(), requestBodyJson)
+                val requestBody = RequestBody.create(
+                    "application/json; charset=utf-8".toMediaTypeOrNull(),
+                    requestBodyJson
+                )
 
                 // access token 재발급 request
                 val accessTokenRequest =
@@ -60,7 +64,7 @@ constructor(
                 when (refreshAccessToken.status) {
                     // access token 재발급 성공
                     200 -> {
-                        userInfoDataSource.accessToken = refreshAccessToken.data?.accessToken
+                        userInfoDataSource.accessToken = refreshAccessToken.response?.accessToken
 
                         refreshAccessTokenResponse.close()
 

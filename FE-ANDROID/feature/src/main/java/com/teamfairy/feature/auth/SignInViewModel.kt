@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.teamfairy.core_ui.view.UiState
 import com.teamfairy.domain.entity.AuthEntity
 import com.teamfairy.domain.entity.UserInfoEntity
+import com.teamfairy.domain.repository.CommunityRepository
 import com.teamfairy.domain.repository.SignInRepository
 import com.teamfairy.domain.repository.UserInfoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class SignInViewModel @Inject constructor(
     private val signInRepository: SignInRepository,
-    private val userInfoRepository: UserInfoRepository
+    private val userInfoRepository: UserInfoRepository,
+    private val communityRepository: CommunityRepository
 ) : ViewModel() {
     private val _postSignIn = MutableStateFlow<UiState<AuthEntity>>(UiState.Empty)
     val postSignIn: StateFlow<UiState<AuthEntity>> = _postSignIn
@@ -63,4 +65,14 @@ class SignInViewModel @Inject constructor(
     fun getNationality() = userInfoRepository.getNationality()
 
     fun saveNationality(nation: String) = userInfoRepository.saveNationality(nation)
+
+    fun deleteComment(tblReplyId: Int) = viewModelScope.launch {
+        communityRepository.deleteComment(tblReplyId)
+            .fold({ }, { UiState.Failure(it.message.toString()) })
+    }
+
+    fun deleteFeed(tblCommunityId: Int) = viewModelScope.launch {
+        communityRepository.deleteCommunityFeed(tblCommunityId)
+            .fold({ }, { UiState.Failure(it.message.toString()) })
+    }
 }

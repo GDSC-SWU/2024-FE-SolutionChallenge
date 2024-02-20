@@ -13,7 +13,7 @@ class IncomeRepositoryImpl @Inject constructor(
     private val dataSource: IncomeDataSource
 ) : IncomeRepository {
     override suspend fun postIncomeList(): Result<List<IncomeCardEntity?>> = runCatching {
-        dataSource.postIncomeList().map { it.toIncomeCardEntity() }
+        dataSource.postIncomeList().response?.map { it.toIncomeCardEntity() } ?: emptyList()
     }
 
     override suspend fun postAddIncome(request: AddIncomeEntity): Result<Int> = runCatching {
