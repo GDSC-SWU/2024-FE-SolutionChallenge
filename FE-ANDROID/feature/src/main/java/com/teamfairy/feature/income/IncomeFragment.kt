@@ -20,8 +20,8 @@ class IncomeFragment : BindingFragment<FragmentIncomeBinding>(R.layout.fragment_
 
     private fun initIncomeCardAdapter() {
         val list = listOf(
-            IncomeCardEntity(1, "카페", "15", "2024.01.01 - 01.31", "100,000"),
-            IncomeCardEntity(2, "00컴퍼니", "16", "2024.01.05 - 01.31", "300,000"),
+            IncomeCardEntity(1, "카페", "15", "2024.01.01 - 01.31", "100000"),
+            IncomeCardEntity(2, "00컴퍼니", "16", "2024.01.05 - 01.31", "300000"),
 //            IncomeCardEntity(3, "TEST", "17", "2024.02.01 - 01.31", "400,000 ₩"),
 //            IncomeCardEntity(4, "TEST", "18", "2024.02.07 - 01.31", "500,000 ₩")
         )
