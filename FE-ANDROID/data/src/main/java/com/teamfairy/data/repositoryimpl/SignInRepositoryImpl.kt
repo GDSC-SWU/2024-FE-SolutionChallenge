@@ -9,6 +9,6 @@ class SignInRepositoryImpl @Inject constructor(
     private val signInDataSource: SignInDataSource
 ) : SignInRepository {
     override suspend fun postLogin(idToken: String): Result<AuthEntity?> = runCatching {
-        signInDataSource.postSignIn(idToken).data?.toAuthEntity()
+        signInDataSource.postSignIn(idToken).toAuthEntity()
     }
 }

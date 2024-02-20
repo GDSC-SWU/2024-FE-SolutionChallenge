@@ -21,7 +21,7 @@
             android:layout_width="1dp"
             android:layout_height="0dp"
             app:dividerColor="@color/gray_cd"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_consumption_price_type_children"
             app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
             android:layout_width="1dp"
             android:layout_height="0dp"
             app:dividerColor="@color/gray_cd"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_consumption_price_type_children"
             app:layout_constraintEnd_toEndOf="@id/guideline_consumption_price_2"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toTopOf="parent" />

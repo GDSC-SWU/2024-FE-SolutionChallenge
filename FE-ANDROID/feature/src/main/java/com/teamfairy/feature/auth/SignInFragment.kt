@@ -32,6 +32,7 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
 
     override fun initView() {
         statusBarColorOf(R.color.main_color)
+        observeLogin()
         getGoogleClient()
         googleSignResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
@@ -63,8 +64,8 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
             val googleIdToken = account?.idToken.toString()
             if (!googleIdToken.isNullOrBlank()) {
                 Timber.tag("idToken").d(googleIdToken)
-                //viewModel.postSignIn(googleIdToken)
                 findNavController().navigate(R.id.action_signIn_to_nationality)
+                //viewModel.postSignIn(googleIdToken)
             }
         } catch (e: ApiException) {
             Timber.d("signInResult:failed Code = " + e.statusCode)

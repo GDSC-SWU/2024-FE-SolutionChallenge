@@ -10,16 +10,18 @@ data class IncomeCard(
     val companyName: String,
     val payDay: String,
     val startDay: String,
-    val currentSalary: String
+    val currentSalary: String,
+    val workHour: String?
 ) : Parcelable {
     constructor(incomeCardEntity: IncomeCardEntity) : this(
         incomeCardEntity.incomeId,
-        incomeCardEntity.companyName,
-        incomeCardEntity.payDay,
+        incomeCardEntity.companyName ?: "",
+        incomeCardEntity.payDay ?: "",
         incomeCardEntity.startDay,
-        incomeCardEntity.currentSalary
+        incomeCardEntity.currentSalary,
+        null
     )
 
     fun toIncomeCardEntity() =
-        IncomeCardEntity(incomeId, companyName, payDay, startDay, currentSalary)
+        IncomeCardEntity(incomeId, companyName, payDay, startDay, currentSalary, workHour = null)
 }

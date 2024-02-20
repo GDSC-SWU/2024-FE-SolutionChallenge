@@ -9,7 +9,7 @@ import javax.inject.Inject
 class SignInDataSourceImpl @Inject constructor(
     private val apiService: SignInApiService
 ) : SignInDataSource {
-    override suspend fun postSignIn(idToken: String): BaseResponse<ResponseSignInDto> {
+    override suspend fun postSignIn(idToken: String): ResponseSignInDto {
         return apiService.postSignIn(idToken)
     }
 }
