@@ -24,4 +24,8 @@ interface UserInfoRepository {
     fun getMemberProfileUrl(): String
 
     fun saveMemberProfileUrl(memberUrl: String)
+
+    fun saveNationality(nation: String)
+
+    fun getNationality(): String
 }

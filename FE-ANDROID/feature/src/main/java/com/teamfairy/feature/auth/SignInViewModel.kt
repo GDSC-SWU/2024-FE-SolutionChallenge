@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.teamfairy.core_ui.view.UiState
 import com.teamfairy.domain.entity.AuthEntity
+import com.teamfairy.domain.entity.UserInfoEntity
 import com.teamfairy.domain.repository.SignInRepository
 import com.teamfairy.domain.repository.UserInfoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,11 +21,19 @@ class SignInViewModel @Inject constructor(
     private val _postSignIn = MutableStateFlow<UiState<AuthEntity>>(UiState.Empty)
     val postSignIn: StateFlow<UiState<AuthEntity>> = _postSignIn
 
+    private val _postNationality = MutableStateFlow<UiState<UserInfoEntity>>(UiState.Empty)
+    val postNationality: StateFlow<UiState<UserInfoEntity>> = _postNationality
+
     fun postSignIn(idToken: String) = viewModelScope.launch {
-        signInRepository.postLogin(idToken).fold(
-            { if (it != null) _postSignIn.value = UiState.Success(it) },
-            { UiState.Failure(it.message.toString()) }
-        )
+        signInRepository.postLogin(idToken)
+            .fold({ if (it != null) _postSignIn.value = UiState.Success(it) },
+                { UiState.Failure(it.message.toString()) })
+    }
+
+    fun postNationality(nation: String) = viewModelScope.launch {
+        signInRepository.postNationality(getRefreshToken(), nation)
+            .fold({ _postNationality.value = UiState.Success(it) },
+                { UiState.Failure(it.message.toString()) })
     }
 
     fun getAccessToken() = userInfoRepository.getAccessToken()
@@ -50,4 +59,8 @@ class SignInViewModel @Inject constructor(
     fun getMemberProfileUrl() = userInfoRepository.getMemberProfileUrl()
 
     fun saveMemberProfileUrl(memberUrl: String) = userInfoRepository.saveMemberProfileUrl(memberUrl)
+
+    fun getNationality() = userInfoRepository.getNationality()
+
+    fun saveNationality(nation: String) = userInfoRepository.saveNationality(nation)
 }

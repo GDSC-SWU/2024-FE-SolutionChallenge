@@ -78,7 +78,6 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
         viewModel.postSignIn.flowWithLifecycle(lifecycle).onEach {
             when (it) {
                 is UiState.Success -> {
-                    viewModel.saveCheckLogin(true)
                     saveUserInfo(it.data.accessToken, it.data.refreshToken)
                     findNavController().navigate(R.id.action_signIn_to_nationality)
                 }

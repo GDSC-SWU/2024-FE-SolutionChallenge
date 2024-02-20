@@ -7,6 +7,7 @@ interface SharedPreferenceDataSource {
     var memberId: Int
     var nickName: String?
     var memberProfileUrl: String?
+    var nation: String?
 
     fun clear()
 }
