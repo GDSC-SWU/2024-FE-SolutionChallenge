@@ -7,5 +7,10 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowBackground">@color/bg_white</item>
     </style>
+
     <style name="Theme.FE" parent="Base.Theme.FE" />
+
+    <style name="Theme.FE.RemoveSplash" parent="Theme.FE">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

@@ -26,6 +26,7 @@
             android:id="@+id/rv_community_daily_detail"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
             android:visibility="invisible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/et_community_daily_detail_input_comment"

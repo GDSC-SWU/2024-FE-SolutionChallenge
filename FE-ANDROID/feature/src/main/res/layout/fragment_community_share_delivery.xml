@@ -50,6 +50,7 @@
             android:paddingVertical="10dp"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
             android:textColorHint="@color/gray_85"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

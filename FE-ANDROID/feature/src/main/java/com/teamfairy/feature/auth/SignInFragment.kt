@@ -3,6 +3,7 @@ package com.teamfairy.feature.auth
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +34,7 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
     override fun initView() {
         statusBarColorOf(R.color.main_color)
         observeLogin()
+        binding.btnSignInNavigateMain.isVisible = true
         getGoogleClient()
         googleSignResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
