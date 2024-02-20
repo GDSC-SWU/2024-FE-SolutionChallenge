@@ -28,7 +28,7 @@ class IncomeDetailFragment :
     private val viewModel by viewModels<IncomeViewModel>()
 
     override fun initView() {
-        getParcelable(KEY_INCOME_CARD, IncomeCard::class.java)?.let { viewModel.postIncomeDetail(it.incomeId) }
+       // getParcelable(KEY_INCOME_CARD, IncomeCard::class.java)?.let { viewModel.postIncomeDetail(it.incomeId) }
         initIncomeCardAdapter()
         concatIncomeDetailAdapter()
         navigateToBack()
@@ -37,7 +37,7 @@ class IncomeDetailFragment :
 
     private fun initIncomeCardAdapter() {
         incomeCardAdapter =
-            IncomeCardAdapter(onMoveToIncomeDetailClick = {}, onClickReceiveSalary = {}, today = -1,
+            IncomeCardAdapter(onMoveToIncomeDetailClick = {}, onClickReceiveSalary = {_,_->}, today = -1,
                 countryCode = 0
             ).apply {
                 submitList(getParcelable(

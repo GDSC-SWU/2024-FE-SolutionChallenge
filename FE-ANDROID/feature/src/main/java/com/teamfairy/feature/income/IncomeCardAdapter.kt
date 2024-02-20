@@ -13,7 +13,7 @@ import com.teamfairy.feature.income.viewholder.IncomeCardIngViewHolder
 
 class IncomeCardAdapter(
     private val onMoveToIncomeDetailClick: (IncomeCardEntity) -> Unit,
-    private val onClickReceiveSalary: (Boolean,Int) -> Unit,
+    private val onClickReceiveSalary: (Boolean, Int) -> Unit,
     private val today: Int,
     private val countryCode: Int
 ) : ListAdapter<IncomeCardEntity, RecyclerView.ViewHolder>(
@@ -23,8 +23,8 @@ class IncomeCardAdapter(
     override fun getItemId(position: Int): Long = position.toLong()
 
     override fun getItemViewType(position: Int): Int {
-        return when (today) {
-            currentList[position].payDay?.toInt() -> PAY_DAY
+        return when {
+            today < currentList[position].payDay?.toInt() ?: 0 -> PAY_DAY
             else -> ING
         }
     }

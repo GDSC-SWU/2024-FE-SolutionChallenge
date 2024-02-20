@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="com.teamfairy.feature.auth.SignInViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +56,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_bus" />
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_bus"
+            app:viewmodel="@{viewmodel}" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider_consumption_bus"
@@ -87,7 +91,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_subway" />
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_subway"
+            app:viewmodel="@{viewmodel}" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider_consumption_subway"
@@ -121,6 +126,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_taxi" />
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_label_taxi"
+            app:viewmodel="@{viewmodel}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

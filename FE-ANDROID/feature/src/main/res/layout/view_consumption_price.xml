@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="com.teamfairy.feature.auth.SignInViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -175,7 +178,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_3"
-            app:setExchangeCountry="@{`1`}"
+            app:setExchangeCountry="@{viewmodel.nationality}"
             app:setExchangePrice="@{`3000`}" />
 
         <TextView
@@ -188,7 +191,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_4"
-            app:setExchangeCountry="@{`1`}"
+            app:setExchangeCountry="@{viewmodel.nationality}"
             app:setExchangePrice="@{`1700`}" />
 
         <TextView
@@ -202,7 +205,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline_consumption_price_2"
             app:layout_constraintTop_toBottomOf="@id/guideline_consumption_price_5"
-            app:setExchangeCountry="@{`1`}"
+            app:setExchangeCountry="@{viewmodel.nationality}"
             app:setExchangePrice="@{`1500`}" />
 
         <TextView

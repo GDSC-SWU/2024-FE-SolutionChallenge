@@ -8,9 +8,10 @@ import com.teamfairy.feature.community.CommunityTabAdapter.Companion.CommunityTa
 import com.teamfairy.feature.communitydetail.viewholder.CommunityDetailFeedViewHolder
 import com.teamfairy.feature.databinding.ItemCommunityDetailFeedBinding
 
-class CommunityDetailFeedAdapter() : ListAdapter<FeedEntity, CommunityDetailFeedViewHolder>(
-    CommunityTabDiffCallback
-) {
+class CommunityDetailFeedAdapter(private val onClickKebab: (FeedEntity) -> Unit) :
+    ListAdapter<FeedEntity, CommunityDetailFeedViewHolder>(
+        CommunityTabDiffCallback
+    ) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
@@ -18,7 +19,7 @@ class CommunityDetailFeedAdapter() : ListAdapter<FeedEntity, CommunityDetailFeed
         val binding = ItemCommunityDetailFeedBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return CommunityDetailFeedViewHolder(binding)
+        return CommunityDetailFeedViewHolder(binding, onClickKebab)
     }
 
     override fun onBindViewHolder(holder: CommunityDetailFeedViewHolder, position: Int) {

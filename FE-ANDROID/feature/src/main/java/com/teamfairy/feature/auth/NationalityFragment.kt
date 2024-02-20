@@ -43,9 +43,20 @@ class NationalityFragment :
 
     private fun setCompletionClickListener() = binding.btnNationality.setOnClickListener {
         if (binding.ivNationalityCheckChina.isSelected) {
-            viewModel.postNationality("1")
+            // viewModel.postNationality("1")
+            viewModel.saveCheckLogin(true)
+            saveUserInfo(
+                "소현",
+                "https://lh3.googleusercontent.com/a/ACg8ocKh00ZrLLR3UNLtH5qAgkFLEjNhIoGkFq1OFqmmIMjT=s96-c",
+                "1"
+            )
         } else {
-            viewModel.postNationality("2")
+            // viewModel.postNationality("2")
+            saveUserInfo(
+                "소현",
+                "https://lh3.googleusercontent.com/a/ACg8ocKh00ZrLLR3UNLtH5qAgkFLEjNhIoGkFq1OFqmmIMjT=s96-c",
+                "2"
+            )
         }
         findNavController().navigate(R.id.action_nationality_to_income)
     }

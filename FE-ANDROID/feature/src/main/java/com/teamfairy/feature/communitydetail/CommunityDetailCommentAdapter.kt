@@ -8,7 +8,7 @@ import com.teamfairy.domain.entity.CommentEntity
 import com.teamfairy.feature.communitydetail.viewholder.CommunityDetailCommentViewHolder
 import com.teamfairy.feature.databinding.ItemCommunityCommentBinding
 
-class CommunityDetailCommentAdapter() :
+class CommunityDetailCommentAdapter(private val onClickKebab: (CommentEntity) -> Unit) :
     ListAdapter<CommentEntity, CommunityDetailCommentViewHolder>(
         CommunityDetailCommentDiffCallback
     ) {
@@ -19,7 +19,7 @@ class CommunityDetailCommentAdapter() :
     ): CommunityDetailCommentViewHolder {
         val binding =
             ItemCommunityCommentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CommunityDetailCommentViewHolder(binding)
+        return CommunityDetailCommentViewHolder(binding, onClickKebab)
     }
 
     override fun onBindViewHolder(holder: CommunityDetailCommentViewHolder, position: Int) {

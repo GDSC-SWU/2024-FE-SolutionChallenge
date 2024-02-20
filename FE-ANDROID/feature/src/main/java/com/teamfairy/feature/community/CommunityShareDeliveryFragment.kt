@@ -12,6 +12,7 @@ import com.teamfairy.feature.R
 import com.teamfairy.feature.communitydetail.CommunityDetailCommentAdapter
 import com.teamfairy.feature.communitydetail.CommunityDetailFeedAdapter
 import com.teamfairy.feature.databinding.FragmentCommunityShareDeliveryBinding
+import com.teamfairy.feature.dialog.DeleteDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -46,16 +47,31 @@ class CommunityShareDeliveryFragment :
     }
 
     private fun concatCommunityDetailAdapter() {
-        val communityDetailFeedAdapter = CommunityDetailFeedAdapter().apply {
+        val communityDetailFeedAdapter = CommunityDetailFeedAdapter(onClickKebab = {
+            initDeleteDialog("1")
+        }).apply {
             submitList(listOf(FeedEntity("test1")))
         }
 
-        val communityDetailCommentAdapter = CommunityDetailCommentAdapter().apply {
+        val communityDetailCommentAdapter = CommunityDetailCommentAdapter(onClickKebab = {
+            initDeleteDialog("1")
+        }).apply {
             submitList(listOf(CommentEntity("test1"), CommentEntity("test2")))
         }
 
         binding.rvCommunityShareDeliveryDetail.adapter =
             ConcatAdapter(communityDetailFeedAdapter, communityDetailCommentAdapter)
+    }
+
+
+    private fun initDeleteDialog(id: String) {
+        if (id == viewModel.getMemberId().toString()) {
+            val dialog = DeleteDialog("Do you want to delete it?", 2)
+            dialog.show(childFragmentManager, "delete")
+        } else {
+            val dialog = DeleteDialog("Do you want to delete it?", 3)
+            dialog.show(childFragmentManager, "delete")
+        }
     }
 
     private fun observeClickBack() {

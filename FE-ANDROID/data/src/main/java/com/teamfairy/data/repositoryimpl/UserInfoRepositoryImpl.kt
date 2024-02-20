@@ -59,10 +59,10 @@ class UserInfoRepositoryImpl
     }
 
     override fun saveNationality(nation: String) {
-        TODO("Not yet implemented")
+        sharedPreferenceDataSource.nation = nation
     }
 
     override fun getNationality(): String {
-        TODO("Not yet implemented")
+        return sharedPreferenceDataSource.nation ?: ""
     }
 }

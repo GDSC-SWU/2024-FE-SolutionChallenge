@@ -92,12 +92,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:singleSelection="true"
             app:layout_constraintBottom_toBottomOf="@id/tv_community_posting_label_category"
             app:layout_constraintStart_toEndOf="@id/tv_community_posting_label_category"
-            app:layout_constraintTop_toTopOf="@id/tv_community_posting_label_category">
+            app:layout_constraintTop_toTopOf="@id/tv_community_posting_label_category"
+            app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chip_community_daily"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_community_posting_category_daily"
@@ -107,6 +108,7 @@
                 app:chipStrokeColor="@color/sel_community_posting_category_line" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chip_community_share_delivery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_community_posting_category_share_delivery"
@@ -139,7 +141,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_community_posting">
-            <requestFocus/>
+
+            <requestFocus />
         </EditText>
 
         <TextView
@@ -173,6 +176,7 @@
             android:gravity="top"
             android:hint="@string/et_community_posting_content"
             android:includeFontPadding="false"
+            android:maxLength="500"
             android:textAppearance="@style/TextAppearance.FE.Regular_12"
             android:textColorHint="@color/gray_cd"
             app:layout_constraintBottom_toTopOf="@id/tv_community_posting_content_length"
