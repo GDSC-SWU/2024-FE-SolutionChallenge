@@ -22,7 +22,7 @@ class IncomeWorkCheckAdapter(
         return IncomeWorkCheckViewHolder(binding, onClickSortingBtn)
     }
 
-    fun updateItem(data:List<WorkCheckEntity>){
+    fun updateItem(data:List<WorkCheckEntity?>){
         submitList(data)
     }
 
