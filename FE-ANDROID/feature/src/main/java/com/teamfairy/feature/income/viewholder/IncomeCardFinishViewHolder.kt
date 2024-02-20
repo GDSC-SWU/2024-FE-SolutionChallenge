@@ -6,7 +6,7 @@ import com.teamfairy.feature.databinding.ItemIncomeCardFinishBinding
 
 class IncomeCardFinishViewHolder(
     private val binding: ItemIncomeCardFinishBinding,
-    private val onClickReceiveSalary: (Boolean) -> Unit
+    private val onClickReceiveSalary: (Boolean, Int) -> Unit
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
@@ -15,8 +15,18 @@ class IncomeCardFinishViewHolder(
             income = data
             executePendingBindings()
 
-            tvItemIncomeCardFinishYes.setOnClickListener { onClickReceiveSalary(true) }
-            tvItemIncomeCardFinishNo.setOnClickListener { onClickReceiveSalary(false) }
+            tvItemIncomeCardFinishYes.setOnClickListener {
+                onClickReceiveSalary(
+                    true,
+                    data.incomeId
+                )
+            }
+            tvItemIncomeCardFinishNo.setOnClickListener {
+                onClickReceiveSalary(
+                    false,
+                    data.incomeId
+                )
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.teamfairy.data.dto.response
 
 import com.teamfairy.domain.entity.IncomeCardEntity
+import com.teamfairy.domain.entity.WorkCheckEntity
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -29,8 +30,8 @@ data class WorkDetail(
     @SerialName("workDay") val workDay: String?
 ) {
     fun toIncomeDetailCardEntity() = workDay?.let {
-        IncomeCardEntity(
-            tblWorkDetailId, null, null, it, koreaSalary.toString(), workHour.toString()
+        WorkCheckEntity(
+            tblWorkDetailId, koreaSalary.toInt(), workHour, workDay
         )
     }
 }

@@ -5,6 +5,7 @@ import com.teamfairy.data.dto.request.RequestIncomeAddDto
 import com.teamfairy.data.dto.request.Work
 import com.teamfairy.domain.entity.AddIncomeEntity
 import com.teamfairy.domain.entity.IncomeCardEntity
+import com.teamfairy.domain.entity.WorkCheckEntity
 import com.teamfairy.domain.repository.IncomeRepository
 import javax.inject.Inject
 
@@ -31,7 +32,7 @@ class IncomeRepositoryImpl @Inject constructor(
 
     override suspend fun postIncomeDetail(
         incomeId: Int, oderType: String
-    ): Result<List<IncomeCardEntity?>> = kotlin.runCatching {
+    ): Result<List<WorkCheckEntity?>> = kotlin.runCatching {
         dataSource.postIncomeDetail(incomeId, "DESC").workDetails.map {
             it.toIncomeDetailCardEntity()
         }

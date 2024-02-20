@@ -13,7 +13,7 @@ import com.teamfairy.feature.income.viewholder.IncomeCardIngViewHolder
 
 class IncomeCardAdapter(
     private val onMoveToIncomeDetailClick: (IncomeCardEntity) -> Unit,
-    private val onClickReceiveSalary: (Boolean) -> Unit,
+    private val onClickReceiveSalary: (Boolean,Int) -> Unit,
     private val today: Int,
     private val countryCode: Int
 ) : ListAdapter<IncomeCardEntity, RecyclerView.ViewHolder>(
