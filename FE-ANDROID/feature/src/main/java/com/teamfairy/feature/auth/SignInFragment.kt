@@ -67,7 +67,7 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_
             if (!googleIdToken.isNullOrBlank()) {
                 Timber.tag("idToken").d(googleIdToken)
                 findNavController().navigate(R.id.action_signIn_to_nationality)
-                saveUserInfo("1","1")
+//                saveUserInfo("1","1")
                 //viewModel.postSignIn(googleIdToken)
             }
         } catch (e: ApiException) {

@@ -43,7 +43,7 @@ class IncomeAddWorkingHourBottomSheet :
 
     private fun setCancelBtnClickListener() {
         binding.ivAddWorkingHourCancel.setOnClickListener {
-            val dialog = DeleteDialog("Delete this schedule?", 0)
+            val dialog = DeleteDialog("Delete this schedule?", 0,-1)
             dialog.show(childFragmentManager, "delete")
         }
     }

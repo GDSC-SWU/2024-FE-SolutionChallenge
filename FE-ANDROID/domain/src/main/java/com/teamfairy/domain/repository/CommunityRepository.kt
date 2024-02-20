@@ -1,10 +1,11 @@
 package com.teamfairy.domain.repository
 
+import com.teamfairy.domain.entity.FeedEntity
 import com.teamfairy.domain.entity.PostCommentEntity
 import com.teamfairy.domain.entity.PostingFeedEntity
 
 interface CommunityRepository {
-    suspend fun postCommunityList(request: PostingFeedEntity): Result<List<Unit>>
+    suspend fun postCommunityList(type: String): Result<List<FeedEntity>>
     suspend fun postCommunityPosting(request: PostingFeedEntity): Result<Unit>
     suspend fun postCommunityDetail(tblCommunityId: Int): Result<List<Unit>>
     suspend fun deleteCommunityFeed(tblCommunityId: Int): Result<String>

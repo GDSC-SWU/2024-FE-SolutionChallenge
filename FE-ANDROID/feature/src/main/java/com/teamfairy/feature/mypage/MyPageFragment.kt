@@ -21,7 +21,7 @@ class MyPageFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_
 
     private fun setSignOutClickListener() {
         binding.tvMyPageSignOut.setOnClickListener {
-            val dialog = DeleteDialog("Sign Out?", 4)
+            val dialog = DeleteDialog("Sign Out?", 4, -1)
             dialog.show(childFragmentManager, "delete")
         }
     }

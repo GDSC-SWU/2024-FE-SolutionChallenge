@@ -12,6 +12,8 @@ class CommunityTabViewHolder(
 
     fun bind(data: FeedEntity) {
         with(binding) {
+            binding.data = data
+            executePendingBindings()
             tvItemCommunityTitle.text = data.title
             root.setOnClickListener {
                 onMoveToCommunityDetailClick(data)

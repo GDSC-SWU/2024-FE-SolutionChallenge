@@ -16,6 +16,7 @@ class CommunityDetailCommentViewHolder(
             tvItemCommunityCommentNickname.text = data.nickname
 
             if (bindingAdapterPosition == 0) dividerItemCommunityComment.isVisible = false
+            ivCommunityCommentKebab.setOnClickListener { onClickKebab(data) }
         }
     }
 }

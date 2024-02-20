@@ -3,6 +3,7 @@ package com.teamfairy.data.api
 import com.teamfairy.data.dto.request.RequestCommunityList
 import com.teamfairy.data.dto.request.RequestComunityPostingDto
 import com.teamfairy.data.dto.request.RequestPostCommentDto
+import com.teamfairy.data.dto.response.ResponseCommunityListDto
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
@@ -18,7 +19,7 @@ interface CommunityApiService {
     @POST("api/v1/community/search")
     suspend fun postCommunityList(
         @Body request: RequestCommunityList
-    ): List<Unit>
+    ): ResponseCommunityListDto
 
     @GET("api/v1/community/detail/{tblCommunityId}")
     suspend fun postCommunityDetail(

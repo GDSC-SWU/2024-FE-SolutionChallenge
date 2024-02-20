@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -48,8 +49,10 @@ class IncomeViewModel @Inject constructor(
 
     fun postIncomeList() = viewModelScope.launch {
         incomeRepository.postIncomeList()
-            .fold({ if (it != null) _postIncomeList.value = UiState.Success(it) },
-                { UiState.Failure(it.message.toString()) })
+            .fold({ if (it != null) _postIncomeList.value = UiState.Success(it)
+                Timber.tag("tttt").d(it.toString())},
+                { UiState.Failure(it.message.toString())
+                    Timber.tag("tttt").d(it.message.toString()) })
     }
 
     fun postAddIncome(requestBody: AddIncomeEntity) = viewModelScope.launch {

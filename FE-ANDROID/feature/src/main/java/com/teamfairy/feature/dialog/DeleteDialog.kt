@@ -10,7 +10,7 @@ import com.teamfairy.feature.databinding.DialogDeleteBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DeleteDialog(val title: String, val type: Int) :
+class DeleteDialog(val title: String, val type: Int, val contentId: Int) :
     BindingDialogFragment<DialogDeleteBinding>(R.layout.dialog_delete) {
     private val viewModel by viewModels<SignInViewModel>()
 
@@ -36,6 +36,9 @@ class DeleteDialog(val title: String, val type: Int) :
 
                 2 -> {
                     //게시물 삭제
+                    if (tag == "feed") viewModel.deleteFeed(contentId) else viewModel.deleteComment(
+                        contentId
+                    )
                 }
 
                 3 -> {
@@ -46,6 +49,7 @@ class DeleteDialog(val title: String, val type: Int) :
                     viewModel.saveCheckLogin(false)
                     findNavController().navigate(R.id.action_my_page_to_signIn)
                 }
+
                 6 -> {
                     //게시글 취소
                     findNavController().popBackStack()

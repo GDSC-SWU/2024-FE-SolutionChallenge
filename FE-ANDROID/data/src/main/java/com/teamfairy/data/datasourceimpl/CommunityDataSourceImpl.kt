@@ -5,13 +5,14 @@ import com.teamfairy.data.datasource.CommunityDataSource
 import com.teamfairy.data.dto.request.RequestCommunityList
 import com.teamfairy.data.dto.request.RequestComunityPostingDto
 import com.teamfairy.data.dto.request.RequestPostCommentDto
+import com.teamfairy.data.dto.response.ResponseCommunityListDto
 import javax.inject.Inject
 
 class CommunityDataSourceImpl @Inject constructor(
     private val apiService: CommunityApiService
 ) : CommunityDataSource {
-    override suspend fun postCommunityList(request: RequestCommunityList): List<Unit> {
-        TODO("Not yet implemented")
+    override suspend fun postCommunityList(request: RequestCommunityList): ResponseCommunityListDto {
+        return apiService.postCommunityList(request)
     }
 
     override suspend fun postCommunityPosting(request: RequestComunityPostingDto) {
