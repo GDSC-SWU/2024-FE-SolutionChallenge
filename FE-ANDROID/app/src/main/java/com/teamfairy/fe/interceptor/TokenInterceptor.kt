@@ -7,6 +7,9 @@ import com.teamfairy.data.dto.BaseResponse
 import com.teamfairy.data.dto.response.ResponseRefreshTokenDto
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -33,13 +36,17 @@ constructor(
                 Timber.d("토큰 만료됨!!!")
 
                 response.close()
+
+                val requestBodyJson = "{\"accessToken\": \"$accessToken\"}"
+
+                val requestBody = RequestBody.create("application/json; charset=utf-8".toMediaTypeOrNull(), requestBodyJson)
+
                 // access token 재발급 request
                 val accessTokenRequest =
                     chain.request().newBuilder()
                         .url("${FE_BASE_URL}/auth/refresh")
-                        .get()
+                        .post(requestBody)
                         .addHeader("Authorization", "Bearer $accessToken")
-                        .addHeader("Refresh", "Bearer $refreshToken")
                         .build()
 
                 val refreshAccessTokenResponse = chain.proceed(accessTokenRequest)
