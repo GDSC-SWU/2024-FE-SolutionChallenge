@@ -2,6 +2,8 @@ package com.teamfairy.data.api
 
 import com.teamfairy.data.dto.BaseResponse
 import com.teamfairy.data.dto.request.RequestIncomeAddDto
+import com.teamfairy.data.dto.response.IncomeDetailDto
+import com.teamfairy.data.dto.response.ResponseAddIncomeDto
 import com.teamfairy.data.dto.response.ResponseIncomeListDto
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -17,13 +19,13 @@ interface IncomeApiService {
     @POST("/api/v1/income/create")
     suspend fun postAddIncome(
         @Body request: RequestIncomeAddDto
-    ): ResponseIncomeListDto
+    ): ResponseAddIncomeDto
 
     @GET("/api/v1/income/detail")
     suspend fun postIncomeDetail(
-        @Query("tblincomeId") tblincomeId: Int,
+        @Query("tblIncomeId") tblincomeId: Int,
         @Query("orderType") orderType: String
-    ): ResponseIncomeListDto
+    ): IncomeDetailDto
 
     @POST("/api/v1/income/delete/{tblincomeId}")
     suspend fun deleteIncome(

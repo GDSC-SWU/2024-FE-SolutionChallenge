@@ -12,6 +12,7 @@ class IncomeSelectSalaryTypeBottomSheet :
     private val viewModel by activityViewModels<IncomeViewModel>()
 
     override fun initView() {
+        binding.tvSelectTypeSalaryHourly.isSelected = true
         selectType()
     }
 

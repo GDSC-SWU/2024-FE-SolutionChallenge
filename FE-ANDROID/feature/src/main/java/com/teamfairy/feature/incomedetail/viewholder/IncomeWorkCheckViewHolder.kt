@@ -17,6 +17,8 @@ class IncomeWorkCheckViewHolder(
         if (bindingAdapterPosition == 0) setVisibleHeadItem()
         setOnkSortingBtnClickListener()
         setOnWorkCheckBtnClickListener()
+        if (data.workHour == null) binding.tvIncomeDetailWorkCheckTime.isVisible = false
+
     }
 
     private fun setVisibleHeadItem() = with(binding) {

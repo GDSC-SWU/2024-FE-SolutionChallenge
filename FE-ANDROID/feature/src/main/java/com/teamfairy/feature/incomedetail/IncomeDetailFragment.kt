@@ -28,38 +28,26 @@ class IncomeDetailFragment :
     private val viewModel by viewModels<IncomeViewModel>()
 
     override fun initView() {
-       // getParcelable(KEY_INCOME_CARD, IncomeCard::class.java)?.let { viewModel.postIncomeDetail(it.incomeId) }
+        getParcelable(KEY_INCOME_CARD, IncomeCard::class.java)?.let { viewModel.postIncomeDetail(it.incomeId) }
         initIncomeCardAdapter()
-        concatIncomeDetailAdapter()
         navigateToBack()
         observe()
     }
 
     private fun initIncomeCardAdapter() {
         incomeCardAdapter =
-            IncomeCardAdapter(onMoveToIncomeDetailClick = {}, onClickReceiveSalary = {_,_->}, today = -1,
+            IncomeCardAdapter(onMoveToIncomeDetailClick = {}, onClickReceiveSalary = {_,_,_->}, today = -1,
                 countryCode = 0
             ).apply {
                 submitList(getParcelable(
                     KEY_INCOME_CARD, IncomeCard::class.java
                 )?.let { listOf(it.toIncomeCardEntity()) })
             }
+
+        concatIncomeDetailAdapter()
     }
 
     private fun initIncomeWorkCheckAdapter(data: List<WorkCheckEntity?>) {
-        val list = listOf(
-            WorkCheckEntity(1, 9860, 1, "2024-02-05"),
-            WorkCheckEntity(1, 9060, 2, "2024-02-10"),
-            WorkCheckEntity(1, 6860, 3, "2024-02-12"),
-            WorkCheckEntity(1, 1860, 4, "2024-02-01"),
-            WorkCheckEntity(1, 2860, 5, "2024-02-02"),
-            WorkCheckEntity(1, 8860, 6, "2024-03-05"),
-            WorkCheckEntity(1, 6860, 7, "2024-03-10"),
-            WorkCheckEntity(1, 3860, 1, "2024-03-12"),
-            WorkCheckEntity(1, 5860, 1, "2024-03-01"),
-            WorkCheckEntity(1, 1860, 1, "2024-03-02")
-        )
-
         incomeWorkCheckAdapter = IncomeWorkCheckAdapter(onClickSortingBtn = { sortingDes ->
             val sortedList = if (sortingDes) sortedByDescending(data) else sortedByAscending(data)
             incomeWorkCheckAdapter.updateItem(sortedList)
@@ -69,15 +57,20 @@ class IncomeDetailFragment :
     private fun observe() {
         viewModel.postIncomeDetail.flowWithLifecycle(lifecycle).onEach {
             when (it) {
-                is UiState.Success -> initIncomeWorkCheckAdapter(it.data)
+                is UiState.Success -> {
+                    initIncomeWorkCheckAdapter(it.data)
+                    concatIncomeDetailAdapter()
+                }
                 else -> Unit
             }
         }.launchIn(lifecycleScope)
     }
 
     private fun concatIncomeDetailAdapter() {
-        binding.rvIncomeDetail.adapter = ConcatAdapter(incomeCardAdapter, incomeWorkCheckAdapter)
-        setRecyclerViewItemDecoration()
+        if(::incomeCardAdapter.isInitialized && ::incomeWorkCheckAdapter.isInitialized){
+            binding.rvIncomeDetail.adapter = ConcatAdapter(incomeCardAdapter, incomeWorkCheckAdapter)
+            setRecyclerViewItemDecoration()
+        }
     }
 
     private fun setRecyclerViewItemDecoration() {

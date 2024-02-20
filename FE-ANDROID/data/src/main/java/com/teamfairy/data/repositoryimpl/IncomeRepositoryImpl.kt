@@ -13,7 +13,8 @@ class IncomeRepositoryImpl @Inject constructor(
     private val dataSource: IncomeDataSource
 ) : IncomeRepository {
     override suspend fun postIncomeList(): Result<List<IncomeCardEntity?>> = runCatching {
-        dataSource.postIncomeList().response?.map { it.toIncomeCardEntity() } ?: emptyList()
+        dataSource.postIncomeList().response?.map { it.toIncomeCardEntity() }
+            ?: emptyList()
     }
 
     override suspend fun postAddIncome(request: AddIncomeEntity): Result<Int> = runCatching {
@@ -27,17 +28,20 @@ class IncomeRepositoryImpl @Inject constructor(
                 request.toWorkDay,
                 request.taxYn
             )
-        ).toIncomeCardEntity()?.incomeId ?: 0
+        ).response.tblIncomeId ?: 0
     }
 
     override suspend fun postIncomeDetail(
         incomeId: Int, oderType: String
     ): Result<List<WorkCheckEntity?>> = kotlin.runCatching {
-        dataSource.postIncomeDetail(incomeId, "DESC").workDetails.map {
-            it.toIncomeDetailCardEntity()
+        dataSource.postIncomeDetail(incomeId, "DESC").response.workDetails.map {
+            dataSource.postIncomeDetail(incomeId, "DESC").response.incomeDay?.let { it1 ->
+                it.toIncomeDetailEntity(
+                    it1
+                )
+            }
         }
     }
-
 
     override suspend fun deleteIncome(incomeId: Int): String = kotlin.runCatching {
         dataSource.deleteIncome(incomeId) ?: ""

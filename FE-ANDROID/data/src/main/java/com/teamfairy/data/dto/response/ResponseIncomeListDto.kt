@@ -15,11 +15,9 @@ data class ResponseIncomeListDto(
     @SerialName("currntSalary") val currntSalary: Double,
     @SerialName("workDetails") val workDetails: List<WorkDetail>
 ) {
-    fun toIncomeCardEntity() = workDetails[0].workDay?.let {
-        IncomeCardEntity(
-            tblIncomeId, officeName, incomeDay, it, currntSalary.toString(), null
-        )
-    }
+    fun toIncomeCardEntity() = IncomeCardEntity(
+        tblIncomeId, officeName, incomeDay, workDetails[0].workDay ?: "-1", currntSalary.toString(), null
+    )
 }
 
 @Serializable

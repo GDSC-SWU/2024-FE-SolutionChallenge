@@ -84,6 +84,7 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/shape_fill_main_15_rec"
             android:includeFontPadding="false"
+            android:stateListAnimator="@null"
             android:text="Select"
             android:textAppearance="@style/TextAppearance.FE.Bold_14"
             app:layout_constraintBottom_toBottomOf="parent"
