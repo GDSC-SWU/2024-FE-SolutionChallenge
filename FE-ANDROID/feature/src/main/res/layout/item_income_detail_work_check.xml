@@ -87,10 +87,10 @@
             tools:text="1 hours" />
 
         <TextView
+            changePriceFormant="@{String.valueOf(workCheck.daySalary)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
-            android:text="@{workCheck.daySalary + ` ₩`}"
             android:textAppearance="@style/TextAppearance.FE.Bold_16"
             app:layout_constraintBottom_toTopOf="@id/divider_item_income_detail_work_check"
             app:layout_constraintEnd_toEndOf="parent"

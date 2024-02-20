@@ -80,7 +80,7 @@
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"
-            android:text="@{income.currentSalary + ` ₩`}"
+            changePriceFormant="@{income.currentSalary}"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.FE.Bold_16"
             app:layout_constraintBottom_toBottomOf="parent"

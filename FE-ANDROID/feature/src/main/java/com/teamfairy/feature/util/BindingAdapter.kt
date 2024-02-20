@@ -37,12 +37,18 @@ fun TextView.formatDateyyyyMM(date: String) {
     text = LocalDate.parse(date).format(formatter)
 }
 
-@BindingAdapter(*["setExchangePrice","setExchangeCountry"])
+@BindingAdapter(*["setExchangePrice", "setExchangeCountry"])
 fun TextView.exchange(price: String, country: String) {
     val myFormatter = DecimalFormat("#,###")
 
     when (country) {
-        "0" -> text = myFormatter.format(price.toInt() * 0.0054).toString() + "¥"
-        "1" -> text = myFormatter.format(price.toInt() * 18.38).toString() + "₫"
+        "0" -> text = myFormatter.format(price.toInt() * 0.0054).toString() + " ¥"
+        "1" -> text = myFormatter.format(price.toInt() * 18.38).toString() + " ₫"
     }
+}
+
+@BindingAdapter("changePriceFormant")
+fun TextView.changePriceFormat(price: String) {
+    val myFormatter = DecimalFormat("#,###")
+    text = myFormatter.format(price.toInt()).toString() + " ₩"
 }
