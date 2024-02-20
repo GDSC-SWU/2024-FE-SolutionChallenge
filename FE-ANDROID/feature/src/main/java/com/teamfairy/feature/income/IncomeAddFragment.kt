@@ -1,6 +1,8 @@
 package com.teamfairy.feature.income
 
+import android.view.WindowManager
 import androidx.core.view.isVisible
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -29,6 +31,7 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
     private val viewModel by activityViewModels<IncomeViewModel>()
 
     override fun initView() {
+        requireActivity().window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
         initAddPaydayPickBottomSheet()
         initSelectSalaryTypeBottomSheet()
         setWorkingDateClickListener()
@@ -42,7 +45,7 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
     private fun observe() {
         viewModel.postAddIncome.flowWithLifecycle(lifecycle).onEach {
             when (it) {
-                is UiState.Success -> findNavController().popBackStack()
+                is UiState.Success -> findNavController().navigateUp()
                 else -> Unit
             }
         }.launchIn(lifecycleScope)
@@ -52,21 +55,26 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
         binding.btnIncomeAdd.setOnClickListener {
             val company = binding.etIncomeAddCompanyName.text.toString()
             val payday = extractFirstNumberFromString(binding.tvIncomeAddPaydayPick.text.toString())
-            val salaryType = binding.tvIncomeAddSalaryPick.text.toString().replace(" ", "_")
-                .uppercase(Locale.getDefault())
 
             with(LocalDate.now()) {
                 val fromWorkDay = formatDate(year, monthValue, dayOfMonth)
                 val toWorkDay = payday?.toInt()?.let { formatDate(year, monthValue, it) }
                 val taxYn = binding.switchItemIncomeCard.isChecked
                 if (binding.tvIncomeAddSalaryPick.text.toString() == "Hourly wage") {
-
+                    val salaryType = binding.tvIncomeAddSalaryPick.text.toString().replace(" ", "_")
+                        .uppercase(Locale.getDefault())
                 } else {
+                    val salaryType =
+                        binding.tvIncomeAddSalaryPick.text.toString().replace("wage", "pay")
+                            .replace(" ", "_")
+                            .uppercase(Locale.getDefault())
+
                     val tblWorks = listOf(
                         WorkEntity(
                             binding.etIncomeAddSalary.text.toString().toDouble(), null, null
                         )
                     )
+
                     viewModel.postAddIncome(
                         AddIncomeEntity(
                             company,
@@ -124,12 +132,14 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
     private fun observePayday() {
         viewModel.selectPayday.flowWithLifecycle(lifecycle).onEach {
             binding.tvIncomeAddPaydayPick.text = it
+            binding.tvIncomeAddPaydayPick.isSelected = true
         }.launchIn(lifecycleScope)
     }
 
     private fun observeSalaryType() {
         viewModel.selectSalaryType.flowWithLifecycle(lifecycle).onEach {
             binding.tvIncomeAddSalaryPick.text = it
+            binding.tvIncomeAddSalaryPick.isSelected = true
             if (it == "Hourly wage") {
                 binding.tvIncomeAddLabelMonthDate.isVisible = true
                 binding.ivIncomeAddMonthDateCalender.isVisible = true
@@ -137,7 +147,20 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
                 binding.tvIncomeAddLabelMonthDate.isVisible = false
                 binding.ivIncomeAddMonthDateCalender.isVisible = false
             }
+
+            binding.etIncomeAddSalary.doAfterTextChanged { text ->
+                if (binding.etIncomeAddSalary.length() > 0) {
+                    binding.btnIncomeAdd.isSelected = true
+                    setCompletionClickListener()
+                }
+            }
         }.launchIn(lifecycleScope)
+    }
+
+    private fun setCompletionClickListener() {
+        binding.btnIncomeAdd.setOnClickListener {
+            completionAddIncome()
+        }
     }
 
     private fun setTaxClickListener() {
@@ -149,7 +172,7 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
 
     private fun setBackBtnClickLListener() {
         binding.appbarIncomeAdd.ivAppbarBack.setOnClickListener {
-            val dialog = DeleteDialog("Do you want to cancel it?", 1,-1)
+            val dialog = DeleteDialog("Do you want to cancel it?", 1, -1)
             dialog.show(childFragmentManager, "delete")
         }
     }

@@ -49,22 +49,27 @@ class IncomeViewModel @Inject constructor(
 
     fun postIncomeList() = viewModelScope.launch {
         incomeRepository.postIncomeList()
-            .fold({ if (it != null) _postIncomeList.value = UiState.Success(it)
-                Timber.tag("tttt").d(it.toString())},
+            .fold({ if (it != null) _postIncomeList.value = UiState.Success(it) },
                 { UiState.Failure(it.message.toString())
-                    Timber.tag("tttt").d(it.message.toString()) })
+                   })
     }
 
     fun postAddIncome(requestBody: AddIncomeEntity) = viewModelScope.launch {
         incomeRepository.postAddIncome(requestBody)
-            .fold({ if (it != null) _postAddIncome.value = UiState.Success(it) },
-                { UiState.Failure(it.message.toString()) })
+            .fold({ if (it != null) _postAddIncome.value = UiState.Success(it)
+                Timber.tag("tttt").d(it.toString())},
+                { UiState.Failure(it.message.toString())
+                    Timber.tag("tttt").d(it.message.toString())
+                })
     }
 
     fun postIncomeDetail(incomeId: Int) = viewModelScope.launch {
         incomeRepository.postIncomeDetail(incomeId, "DESC")
-            .fold({ if (it != null) _postIncomeDetail.value = UiState.Success(it) },
-                { UiState.Failure(it.message.toString()) })
+            .fold({ if (it != null) _postIncomeDetail.value = UiState.Success(it)
+                Timber.tag("tttt").d(it.toString()) },
+                { UiState.Failure(it.message.toString())
+                    Timber.tag("tttt").d(it.message.toString())}
+            )
     }
 
     fun deleteIncome(id: Int) = viewModelScope.launch {

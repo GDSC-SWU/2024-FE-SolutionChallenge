@@ -73,6 +73,7 @@
                 android:button="@null"
                 android:drawableStart="@drawable/sel_income_add_salary_type_check"
                 android:drawablePadding="11dp"
+                android:stateListAnimator="@null"
                 android:text="@string/tv_select_type_salary_weekly" />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>

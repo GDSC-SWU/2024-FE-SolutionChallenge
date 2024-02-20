@@ -10,10 +10,11 @@ import com.teamfairy.feature.databinding.ItemIncomeCardFinishBinding
 import com.teamfairy.feature.databinding.ItemIncomeCardIngBinding
 import com.teamfairy.feature.income.viewholder.IncomeCardFinishViewHolder
 import com.teamfairy.feature.income.viewholder.IncomeCardIngViewHolder
+import timber.log.Timber
 
 class IncomeCardAdapter(
     private val onMoveToIncomeDetailClick: (IncomeCardEntity) -> Unit,
-    private val onClickReceiveSalary: (Boolean, Int) -> Unit,
+    private val onClickReceiveSalary: (Boolean, Int, Int) -> Unit,
     private val today: Int,
     private val countryCode: Int
 ) : ListAdapter<IncomeCardEntity, RecyclerView.ViewHolder>(
@@ -24,9 +25,13 @@ class IncomeCardAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return when {
-            today <= currentList[position].payDay?.toInt() ?: 0 -> PAY_DAY
+            today >= currentList[position].payDay?.toInt() ?: 40 -> PAY_DAY
             else -> ING
         }
+    }
+
+    fun deleteItem(position: Int) {
+        submitList(currentList.toMutableList().apply { removeAt(position) })
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -49,7 +54,7 @@ class IncomeCardAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when {
-            today <= currentList[position].payDay?.toInt() ?: 0 -> (holder as IncomeCardFinishViewHolder).run {
+            today >= currentList[position].payDay?.toInt() ?: 40 -> (holder as IncomeCardFinishViewHolder).run {
                 bind(currentList[position])
             }
 

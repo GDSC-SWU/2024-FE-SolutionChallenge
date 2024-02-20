@@ -23,6 +23,8 @@ import java.time.LocalDate
 class IncomeFragment : BindingFragment<FragmentIncomeBinding>(R.layout.fragment_income) {
     private val viewModel by viewModels<IncomeViewModel>()
 
+    private lateinit var incomeCardAdapter: IncomeCardAdapter
+
     override fun initView() {
         statusBarColorOf(R.color.bg_white)
         setBannerClickListener()
@@ -32,11 +34,16 @@ class IncomeFragment : BindingFragment<FragmentIncomeBinding>(R.layout.fragment_
     }
 
     private fun initIncomeCardAdapter(data: List<IncomeCardEntity?>) {
-        binding.rvIncome.adapter = IncomeCardAdapter(onClickReceiveSalary = { received, id ->
+        incomeCardAdapter = IncomeCardAdapter(onClickReceiveSalary = { received, id, position ->
             if (!received) {
                 navigateToSalaryGuide()
+                incomeCardAdapter.deleteItem(position)
+                viewModel.deleteIncome(id)
+            } else {
+                incomeCardAdapter.deleteItem(position)
+                viewModel.deleteIncome(id)
             }
-            viewModel.deleteIncome(id)
+
         }, onMoveToIncomeDetailClick = { incomeCardData ->
             navigateToIncomeDetailFragment(
                 incomeCardData
@@ -47,12 +54,14 @@ class IncomeFragment : BindingFragment<FragmentIncomeBinding>(R.layout.fragment_
                 data.ifEmpty {
                     listOf(
                         IncomeCardEntity(
-                            -1, "", "-1", "", "0", "0"
+                            -1, "", "40", "0", "0", "0"
                         )
                     )
                 }
             )
         }
+
+        binding.rvIncome.adapter = incomeCardAdapter
     }
 
     private fun navigateToSalaryGuide() {
