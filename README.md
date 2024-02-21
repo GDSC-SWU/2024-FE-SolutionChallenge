@@ -39,14 +39,14 @@ Therefore, we created a service to help you compare prices and whether you recei
 
 🚀**Our SDGs Goal**
 
-_8 DECENT WORK AND ECONOMIC GROWTH_
+**8 DECENT WORK AND ECONOMIC GROWTH**
 
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/d9cd27ab-d42f-499e-9414-4318def67db4" width="20%" height="20%">
 
 equal consumption and income recognition based on user nationality, and can bring us closer to guaranteeing equal opportunities and ending discrimination.
 
 
-_10 REDUCED INEQUALITIES_
+**10 REDUCED INEQUALITIES**
 
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/67295ccf-2af8-4ff1-ad0e-fd6367986a594" width="20%" height="20%">
 
