@@ -1,4 +1,4 @@
-# 2024 Solution Challenge - FE : FairEconomy
+# 2024 Solution Challenge - FE : FairEconomy💱
 
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/e9689057-222f-48fb-8ae1-95730984b833" width="100%" height="100%">
 <br/>
