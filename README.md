@@ -1,5 +1,7 @@
 # 2024 Solution Challenge - FE : FairEconomy
 
+<img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/e9689057-222f-48fb-8ae1-95730984b833" width="100%" height="100%">
+
 **Problem**
 1. Earned wages
    This occurs due to wage uncertainty that exists in various national labor markets, but even if workers want to see if it is appropriate, there is no information available to refer to.
@@ -70,7 +72,6 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 
 **Explanation**
 
-<img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/e9689057-222f-48fb-8ae1-95730984b833" width="100%" height="100%">
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/a114cb15-c713-4f6e-b47e-d58ef611b3e0" width="100%" height="100%">
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/834cc1d2-9a49-4f4b-b98e-2c02df8e58e2" width="100%" height="100%">
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/07285913-4d8b-4941-a958-d1f80c3033ef" width="100%" height="100%">
