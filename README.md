@@ -4,7 +4,7 @@
 <br/>
 <br/>
 
-**Problem**
+🚩**Problem**
 1. Earned wages
    This occurs due to wage uncertainty that exists in various national labor markets, but even if workers want to see if it is appropriate, there is no information available to refer to.
 2. Unequal pay
@@ -14,7 +14,7 @@
 <br/>
 <br/>
 
-**How to solve?**
+❓**How to solve**
 
 You can use FairEconomy's FE.
 Provide equal consumption and income standards based on the nation.
@@ -37,7 +37,7 @@ Therefore, we created a service to help you compare prices and whether you recei
 <br/>
 <br/>
 
-**Our SDGs Goal**
+🚀**Our SDGs Goal**
 
 _8 DECENT WORK AND ECONOMIC GROWTH_
 
@@ -54,7 +54,7 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 <br/>
 <br/>
 
-**Technology Stack**
+✨**Technology Stack**
 
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/c5817b76-de53-4551-aa97-2061f61b748d" width="20%" height="20%">
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/2994e45c-8ee8-44a6-a9c7-733a08897b76"width="15%" height="15%">
