@@ -87,10 +87,10 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 
 💻**Team member**
 
-🧑‍💻 문소영(so-young moon)
+🧑‍💻 문소영(so-young moon) - Back-end
 
-🧑‍💻 박소현(so-hyun park)
+🧑‍💻 박소현(so-hyun park) - Front-end
 
-🧑‍💻 장민지(min-ji jang)
+🧑‍💻 장민지(min-ji jang) - Design
 
-🧑‍💻 조현정(hyun-jung cho)
+🧑‍💻 조현정(hyun-jung cho) - Back-end
