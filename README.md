@@ -6,8 +6,8 @@
 
 ✅**Contents**
 
-01. [Problem](##🚩**Problem**)
-##🚩**Problem**
+01. [Problem](#1.-Earned-wages)
+#1. Earned wages
 
 
 02. [How to solve](#❓**How-to-solve**)
