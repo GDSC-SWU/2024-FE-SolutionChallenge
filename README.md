@@ -64,11 +64,11 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/683da0f3-9c19-40b4-b00e-206ae2c9799e" width="10%" height="10%">
 
 - Firebase
-- docker
-- Java
 - Kotlin
-- IntelliJ
+- Java
 - Android
+- docker
+- Intellij
 <br/>
 <br/>
 
