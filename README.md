@@ -74,4 +74,12 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/a114cb15-c713-4f6e-b47e-d58ef611b3e0" width="100%" height="100%">
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/834cc1d2-9a49-4f4b-b98e-2c02df8e58e2" width="100%" height="100%">
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/07285913-4d8b-4941-a958-d1f80c3033ef" width="100%" height="100%">
+<br/>
+<br/>
 
+**Demo**
+
+<br/>
+<br/>
+
+**Team member**
