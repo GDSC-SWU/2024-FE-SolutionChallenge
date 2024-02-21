@@ -4,26 +4,6 @@
 <br/>
 <br/>
 
-✅**Contents**
-
-01. [Problem](#🚩**Problem**)
-
-02. [How to solve](#❓**How-to-solve**)
-
-03. [About our Service](#📖**About-our-Service**)
-
-04. [Our SDGs Goal](#🚀**Our-SDGs-Goal**)
-
-05. [Technology Stack](#✨**Technology-Stack**)
-
-06. [Explanation](#📱**Explanation**)
-
-07. [Demo](#📹**Demo**)
-
-08. [Team member](#💻**Team-member**)
-<br/>
-<br/>
-
 🚩**Problem**
 1. Earned wages
    This occurs due to wage uncertainty that exists in various national labor markets, but even if workers want to see if it is appropriate, there is no information available to refer to.
