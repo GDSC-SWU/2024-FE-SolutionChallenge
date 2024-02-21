@@ -3,7 +3,6 @@
 <img src = "https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/123524020/e9689057-222f-48fb-8ae1-95730984b833" width="100%" height="100%">
 <br/>
 <br/>
-
 🚩**Problem**
 1. Earned wages
    This occurs due to wage uncertainty that exists in various national labor markets, but even if workers want to see if it is appropriate, there is no information available to refer to.
