@@ -13,6 +13,11 @@
 
 02. [How to solve](#❓**How-to-solve**)
 
+02. [How to solve](#%F0%9F%92%93**How-to-solve**)
+
+#❓**How to solve**
+
+
 03. [About our Service](#📖**About-our-Service**)
 
 04. [Our SDGs Goal](#🚀**Our-SDGs-Goal**)
