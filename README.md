@@ -86,7 +86,11 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 <br/>
 
 **Team member**
+
 🧑‍💻 문소영(so-young moon)
+
 🧑‍💻 박소현(so-hyun park)
+
 🧑‍💻 장민지(min-ji jang)
+
 🧑‍💻 조현정(hyun-jung cho)
