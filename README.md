@@ -6,9 +6,9 @@
 
 ✅**Contents**
 
-01. [Problem](#Earned-wages)
+01. [Problem](#1-Earned-wages)
 
-#Earned wages
+#1. Earned wages
 
 
 02. [How to solve](#❓**How-to-solve**)
@@ -28,7 +28,7 @@
 <br/>
 
 🚩**Problem**
-1. #Earned wages
+1. Earned wages
    This occurs due to wage uncertainty that exists in various national labor markets, but even if workers want to see if it is appropriate, there is no information available to refer to.
 2. Unequal pay
    When economic activities are carried out in a foreign country rather than in one's own home country, the monetary standard is different, making it difficult to determine whether wages are equal.
