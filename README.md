@@ -7,6 +7,7 @@
 ✅**Contents**
 
 01. [Problem](#Earned-wages)
+
 #Earned wages
 
 
