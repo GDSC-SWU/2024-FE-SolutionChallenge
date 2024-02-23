@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.inputmethod.InputMethodManager
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.teamfairy.core_ui.base.BindingFragment
 import com.teamfairy.domain.entity.PostingFeedEntity
 import com.teamfairy.feature.R
@@ -46,9 +47,10 @@ class CommunityPosting :
                     getFeedType(),
                     binding.etCommunityPostingTitle.text.toString(),
                     binding.etCommunityPostingContent.text.toString(),
-                    ""
+                    "THUMB_NAIL"
                 )
             )
+            findNavController().popBackStack()
         }
     }
 
@@ -56,7 +58,7 @@ class CommunityPosting :
         return if (binding.chipCommunityDaily.isSelected) {
             "DAILY"
         } else {
-            "SHARE_DELIVERY"
+            "NOTICE"
         }
     }
 

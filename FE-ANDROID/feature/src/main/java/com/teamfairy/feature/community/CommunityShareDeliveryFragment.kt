@@ -26,14 +26,23 @@ class CommunityShareDeliveryFragment :
 
     private val viewModel by activityViewModels<CommunityViewModel>()
 
+    private val list = listOf(CommentEntity(1,"ssss","1","!11111"))
+
     override fun initView() {
-        initCommunityTabAdapter()
+        viewModel.postshare("DAILY")
+        initCommentAdapter(list)
         concatCommunityDetailAdapter()
         observeClickBack()
         observe()
     }
 
     private fun observe() {
+        viewModel.postshare.flowWithLifecycle(lifecycle).onEach {
+            when (it) {
+                is UiState.Success -> initCommunityTabAdapter(it.data)
+                else -> Unit
+            }
+        }.launchIn(lifecycleScope)
         viewModel.postCommunitySharedDetail.flowWithLifecycle(lifecycle).onEach {
             when (it) {
                 is UiState.Success -> initCommentAdapter(emptyList())
@@ -42,15 +51,7 @@ class CommunityShareDeliveryFragment :
         }.launchIn(lifecycleScope)
     }
 
-    private fun initCommunityTabAdapter() {
-        val list = listOf(
-            FeedEntity(1, "test1111", "so", "10", "sdfjss"),
-            FeedEntity(2, "test12221", "so", "10", "sdfjss"),
-            FeedEntity(3, "test333", "so", "10", "sdfjss"),
-            FeedEntity(4, "test1445", "so", "10", "sdfjss"),
-            FeedEntity(5, "test14441", "so", "10", "sdfjss"),
-        )
-
+    private fun initCommunityTabAdapter(data: List<FeedEntity>) {
         binding.rvCommunityShareDelivery.adapter =
             CommunityTabAdapter(onMoveToCommunityDetailClick = {
                 setVisibleCommunityDetail(true)
@@ -58,7 +59,7 @@ class CommunityShareDeliveryFragment :
                 initFeedDetail(it)
             }
             ).apply {
-                submitList(list)
+                submitList(data)
             }
     }
 

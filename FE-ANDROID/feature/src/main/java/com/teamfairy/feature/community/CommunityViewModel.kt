@@ -61,6 +61,15 @@ class CommunityViewModel @Inject constructor(
                 { UiState.Failure(it.message.toString()) })
     }
 
+    private val _postshare= MutableStateFlow<UiState<List<FeedEntity>>>(UiState.Empty)
+    val postshare: StateFlow<UiState<List<FeedEntity>>> get() = _postshare
+
+    fun postshare(type: String) = viewModelScope.launch {
+        communityRepository.postCommunityList(type)
+            .fold({ if (it != null) _postCommunityList.value = UiState.Success(it) },
+                { UiState.Failure(it.message.toString()) })
+    }
+
     fun postCommunityPosting(request: PostingFeedEntity) = viewModelScope.launch {
         communityRepository.postCommunityPosting(request)
             .fold({ }, { UiState.Failure(it.message.toString()) })

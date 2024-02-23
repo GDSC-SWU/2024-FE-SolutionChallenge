@@ -46,14 +46,14 @@ class NationalityFragment :
             // viewModel.postNationality("1")
             viewModel.saveCheckLogin(true)
             saveUserInfo(
-                "소현",
+                "sooooFairy",
                 "https://lh3.googleusercontent.com/a/ACg8ocKh00ZrLLR3UNLtH5qAgkFLEjNhIoGkFq1OFqmmIMjT=s96-c",
                 "1"
             )
         } else {
             // viewModel.postNationality("2")
             saveUserInfo(
-                "소현",
+                "soooFairy",
                 "https://lh3.googleusercontent.com/a/ACg8ocKh00ZrLLR3UNLtH5qAgkFLEjNhIoGkFq1OFqmmIMjT=s96-c",
                 "2"
             )

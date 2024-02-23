@@ -93,7 +93,7 @@ data class Item(
         FeedEntity(
             tblCommunityId,
             communityTitle ?: "",
-            updaterName ?: "",
+            creatorName ?: "",
             createdDate,
             communityContent
         )

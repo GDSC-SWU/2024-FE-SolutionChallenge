@@ -12,6 +12,7 @@ class CommunityDetailFeedViewHolder(
 
     fun bind(data: FeedEntity) {
         with(binding) {
+            binding.data = data
             tvItemCommunityDetailFeedTitle.text = data.title
             ivCommunityDetailFeedKebab.setOnClickListener { onClickKebab(data) }
         }

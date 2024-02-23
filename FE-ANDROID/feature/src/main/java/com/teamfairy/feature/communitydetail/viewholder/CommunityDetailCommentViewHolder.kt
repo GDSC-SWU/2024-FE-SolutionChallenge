@@ -13,8 +13,7 @@ class CommunityDetailCommentViewHolder(
 
     fun bind(data: CommentEntity) {
         with(binding) {
-            tvItemCommunityCommentNickname.text = data.nickname
-
+            binding.data = data
             if (bindingAdapterPosition == 0) dividerItemCommunityComment.isVisible = false
             ivCommunityCommentKebab.setOnClickListener { onClickKebab(data) }
         }
