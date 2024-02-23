@@ -81,7 +81,7 @@ appropriate wages (income), it is possible to achieve equal pay for work of equa
 <br/>
 
 📹**Demo**
-
+[![FairE Demo](https://github.com/GDSC-SWU/2024-FE-SolutionChallenge/assets/98076050/34124046-a084-4928-bceb-18dbb08f13a0)](https://youtu.be/ZSUSxh0QBBs?si=xXdmZ7ISoM0TvpiL)
 <br/>
 <br/>
 
