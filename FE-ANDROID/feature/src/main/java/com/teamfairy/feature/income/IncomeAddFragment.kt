@@ -40,6 +40,7 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
         observeSalaryType()
         setBackBtnClickLListener()
         observe()
+        setCompletionClickListener()
     }
 
     private fun observe() {
@@ -103,7 +104,6 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
         return date.format(formatter)
     }
 
-
     private fun initAddPaydayPickBottomSheet() {
         binding.tvIncomeAddPaydayPick.setOnClickListener {
             IncomeAddPaydayBottomSheet().show(
@@ -151,7 +151,7 @@ class IncomeAddFragment : BindingFragment<FragmentIncomeAddBinding>(R.layout.fra
             binding.etIncomeAddSalary.doAfterTextChanged { text ->
                 if (binding.etIncomeAddSalary.length() > 0) {
                     binding.btnIncomeAdd.isSelected = true
-                    setCompletionClickListener()
+                    //setCompletionClickListener()
                 }
             }
         }.launchIn(lifecycleScope)

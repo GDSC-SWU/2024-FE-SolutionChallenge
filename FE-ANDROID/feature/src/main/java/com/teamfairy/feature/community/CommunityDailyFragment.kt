@@ -23,6 +23,20 @@ class CommunityDailyFragment :
     BindingFragment<FragmentCommunityDailyBinding>(R.layout.fragment_community_daily) {
     private lateinit var communityDetailFeedAdapter: CommunityDetailFeedAdapter
     private lateinit var communityDetailCommentAdapter: CommunityDetailCommentAdapter
+    private val list = listOf(
+        CommentEntity(
+            1,
+            "fairy",
+            "30 min ago",
+            "Check out the wage deferral manual on the Income tab! It'll help you with the details."
+        ),
+        CommentEntity(
+            1,
+            "cattt",
+            "10 min ago",
+            "I'm also coming in late for a day or two, but it's so frustrating. Still, talking like this gives me a little comfort."
+        )
+    )
 
     private val viewModel by activityViewModels<CommunityViewModel>()
     override fun initView() {
@@ -30,17 +44,16 @@ class CommunityDailyFragment :
         concatCommunityDetailAdapter()
         observeClickBack()
         observe()
-
+        initCommentAdapter(list)
         binding.etCommunityDailyDetailInputComment.setOnClickListener {
 
         }
     }
 
-
     private fun observe() {
         viewModel.postCommunityDetail.flowWithLifecycle(lifecycle).onEach {
             when (it) {
-                is UiState.Success -> initCommentAdapter(emptyList())
+                is UiState.Success -> initCommentAdapter(list)
                 else -> Unit
             }
         }.launchIn(lifecycleScope)
@@ -54,18 +67,11 @@ class CommunityDailyFragment :
     }
 
     private fun initCommunityTabAdapter(data: List<FeedEntity>) {
-        val list = listOf(
-            FeedEntity(1, "test1111", "so", "10", "sdfjss"),
-            FeedEntity(2, "test12221", "so", "10", "sdfjss"),
-            FeedEntity(3, "test333", "so", "10", "sdfjss"),
-            FeedEntity(4, "test1445", "so", "10", "sdfjss"),
-            FeedEntity(5, "test14441", "so", "10", "sdfjss"),
-        )
-
         binding.rvCommunityDaily.adapter = CommunityTabAdapter(onMoveToCommunityDetailClick = {
             setVisibleCommunityDetail(true)
             viewModel.stateOpenDailyDetail(true)
             initFeedDetail(it)
+            //viewModel.postCommunityDetail(it.contentId)
         }
         ).apply {
             submitList(data)

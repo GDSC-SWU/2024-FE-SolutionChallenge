@@ -22,7 +22,7 @@ constructor(
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
         //val accessToken = userInfoDataSource.accessToken
         val accessToken =
-            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA4NDY4MzEyLCJleHAiOjE3MDg0NzE5MTJ9.fItozlVj3XyZ2-dJoldiM1_tSRtaaPyBGHQ0mEvYPbW0rEUgNZmELl8KY7dWbEJA-Cc1b2_SqUKP2KcbkC8stQ"
+            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicm9sZSI6IlJPTEVfVVNFUiIsImlzcyI6ImRlYnJhaW5zIiwiaWF0IjoxNzA4NDc2MzcxLCJleHAiOjE3MDg0Nzk5NzF9.pUQyeLdQn5MJTvDjKiOUXkfvZkH7-vGytSRDOaQ_1q6aUnI217ASy0qodF3CviWYTxbm0IlsRLOKokRXJEIGgw"
         val refreshToken = userInfoDataSource.refreshToken
 
         // 기존 request

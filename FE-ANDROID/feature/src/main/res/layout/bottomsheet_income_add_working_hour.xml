@@ -78,6 +78,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_income_add_working_hour" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/done"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="28dp"

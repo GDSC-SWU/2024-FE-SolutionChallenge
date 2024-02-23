@@ -6,6 +6,8 @@ import com.teamfairy.data.dto.request.RequestCommunityList
 import com.teamfairy.data.dto.request.RequestComunityPostingDto
 import com.teamfairy.data.dto.request.RequestPostCommentDto
 import com.teamfairy.data.dto.response.ResponseCommunityListDto
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
 import javax.inject.Inject
 
 class CommunityDataSourceImpl @Inject constructor(
@@ -16,7 +18,9 @@ class CommunityDataSourceImpl @Inject constructor(
     }
 
     override suspend fun postCommunityPosting(request: RequestComunityPostingDto) {
-        return apiService.postCommunityPosting(request)
+        return apiService.postCommunityPosting(
+            request
+        )
     }
 
     override suspend fun postCommunityDetail(tblCommunityId: Int): List<Unit> {

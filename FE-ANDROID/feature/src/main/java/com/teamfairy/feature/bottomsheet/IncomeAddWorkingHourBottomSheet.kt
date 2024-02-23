@@ -14,6 +14,9 @@ class IncomeAddWorkingHourBottomSheet :
         binding.numberpickerIncomeAddWorkingHour.displayedValues = list
         setCancelBtnClickListener()
         binding.tvIncomeAddWorkingHourDate.text = tag
+        binding.done.setOnClickListener {
+            dismiss()
+        }
     }
 
     private fun generateHourLabels(): Array<String> {

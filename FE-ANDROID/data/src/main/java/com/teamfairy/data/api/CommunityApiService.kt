@@ -4,16 +4,21 @@ import com.teamfairy.data.dto.request.RequestCommunityList
 import com.teamfairy.data.dto.request.RequestComunityPostingDto
 import com.teamfairy.data.dto.request.RequestPostCommentDto
 import com.teamfairy.data.dto.response.ResponseCommunityListDto
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Path
 
 interface CommunityApiService {
+    @Multipart
     @POST("api/v1/community/create")
     suspend fun postCommunityPosting(
-        @Body request: RequestComunityPostingDto
+        @Part("tblCommunityReq") request : RequestComunityPostingDto,
     ): Unit
 
     @POST("api/v1/community/search")
